@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Abstract decorative urban map (not geographic).
+  Version: 2.1
+  Date: 2026-03-29
+  Summary: Lighter gray strokes, softer opacities; variation kept without muddy look.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" fill="none" aria-hidden="true">
+  <g fill="none" stroke="#9ca3af" stroke-linecap="square" stroke-linejoin="miter">
+    <g opacity="0.55" stroke-width="0.75">
+      <path d="M-20 420 Q180 380 320 440 T620 400 T980 360 L1220 340"/>
+    </g>
+    <g opacity="0.72" stroke-width="0.8">
+      <path d="M0 120 L200 108 L440 130 L700 95 L1200 115"/>
+      <path d="M0 260 L220 248 L500 275 L780 240 L1200 255"/>
+      <path d="M0 580 L260 565 L540 595 L900 555 L1200 570"/>
+    </g>
+    <g opacity="0.88" stroke-width="0.85">
+      <path d="M80 -20 L95 180 L40 320 L120 520 L60 820"/>
+      <path d="M280 0 L265 200 L310 380 L250 620 L290 820"/>
+      <path d="M520 0 L505 220 L560 480 L530 820"/>
+      <path d="M780 0 L765 160 L820 400 L790 820"/>
+    </g>
+    <g opacity="0.5" stroke-width="0.7" stroke-dasharray="6 10">
+      <path d="M150 640 L350 625 L580 655 L850 620 L1050 635"/>
+    </g>
+    <g opacity="0.38" stroke-width="0.65" stroke-dasharray="4 8">
+      <path d="M920 80 L905 280 L950 520 L920 780"/>
+    </g>
+    <g opacity="0.78" stroke-width="0.8">
+      <rect x="140" y="160" width="120" height="90" transform="rotate(-2 200 205)"/>
+      <rect x="360" y="200" width="160" height="110" transform="rotate(1 440 255)"/>
+      <rect x="620" y="140" width="140" height="130" transform="rotate(-1 690 205)"/>
+    </g>
+    <g opacity="0.62" stroke-width="0.78">
+      <rect x="200" y="420" width="200" height="140" transform="rotate(2 300 490)"/>
+      <rect x="480" y="480" width="170" height="100" transform="rotate(-1.5 565 530)"/>
+    </g>
+    <g opacity="0.95" stroke-width="0.82">
+      <rect x="760" y="380" width="150" height="160" transform="rotate(1 835 460)"/>
+      <rect x="900" y="520" width="130" height="90" transform="rotate(-2 965 565)"/>
+    </g>
+  </g>
+</svg>

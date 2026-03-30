@@ -1,0 +1,35 @@
+<!--
+==========================================
+Version: 1.2.0
+Date: 2026-03-29
+Summary: 簡易公演ページ廃止。サーバー移転・ミラー手順の案内のみに変更
+Author: Codex
+==========================================
+-->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>legacy | 極東退屈道場</title>
+    <style>
+        body { font-family: system-ui, sans-serif; max-width: 42rem; margin: 2rem auto; padding: 0 1rem; line-height: 1.65; color: #1a1a1a; }
+        h1 { font-weight: 500; font-size: 1.2rem; }
+        code { font-size: 0.85em; background: #f4f4f4; padding: 0.1em 0.35em; }
+        .back { margin-top: 2rem; font-size: 0.875rem; }
+        p { color: #444; }
+    </style>
+</head>
+<body>
+    <h1>legacy（特設サイトの移設用）</h1>
+    <p>ここには現状ファイルを置いていません。旧サーバーから<strong>データ一式を取得して</strong>新サーバーや本リポジトリの <code>legacy/sites/</code> に載せ替える運用で問題ありません。</p>
+    <p><strong>取得のしかたの例</strong></p>
+    <ul>
+        <li>レンタルサーバの管理画面から <strong>FTP / ファイルマネージャーで public_html 相当を丸ごとダウンロード</strong>する（最も確実）。</li>
+        <li>手元で静的ミラーを取る場合は <code>legacy/tools/mirror_static_site.py</code>（Python3・ネット接続必須）。コマンド例は <code>handover.md</code> を参照。</li>
+        <li>WordPress の場合は DB ではなく<strong>公開済みの生成HTML＋wp-content</strong>が目的なら上記で足ります。WPごと移すなら別途バックアップ手順が必要です。</li>
+    </ul>
+    <p>ミラーを <code>legacy/sites/</code> に展開したあと、<code>archive.html</code> の「公演サイト」リンクをローカルパスに差し替えてください。</p>
+    <p class="back"><a href="../index.html">メインサイトへ</a> · <a href="../archive.html">アーカイブへ</a></p>
+</body>
+</html>

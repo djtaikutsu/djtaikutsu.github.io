@@ -1,0 +1,164 @@
+<!--
+==========================================
+Version: 1.13.5
+Date: 2026-03-29
+Summary: 見出し重複を整理（ヒーローの小ラベル削除）。
+Author: Codex
+==========================================
+-->
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>上演作品 | 極東退屈道場</title>
+    <meta name="description" content="極東退屈道場の上演作品アーカイブ。年表と主要作品の背景テキストを掲載。">
+    <meta property="og:title" content="上演作品 | 極東退屈道場">
+    <meta property="og:description" content="極東退屈道場の上演作品アーカイブ。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="./archive.html">
+    <meta property="og:image" content="picture/common/ogp_default.svg">
+    <link rel="icon" type="image/svg+xml" href="picture/common/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;300;400;500&family=Noto+Sans+JP:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { 'dojo-bg': '#ffffff', 'dojo-text': '#1a1a1a', 'dojo-sub': '#888888', 'dojo-border': '#e2e2e2', 'dojo-grid': '#f8f8f8' },
+                    fontFamily: { sans: ['Noto Sans JP', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: theme('colors.dojo-bg'); color: theme('colors.dojo-text'); -webkit-font-smoothing: antialiased; }
+        .bg-blueprint { background-image: linear-gradient(theme('colors.dojo-grid') 1px, transparent 1px), linear-gradient(90deg, theme('colors.dojo-grid') 1px, transparent 1px); background-size: 80px 80px; }
+        .work-badge { letter-spacing: 0.22em; }
+        .page-map-layer {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            overflow: hidden;
+            background-image: url("picture/common/hero_map_watermark.svg");
+            background-repeat: no-repeat;
+            background-size: min(138%, 1680px) auto;
+            background-position: 50% 46%;
+            opacity: 0.12;
+        }
+        .archive-toc-nav {
+            display: flex;
+            flex-direction: column;
+        }
+        @media (min-width: 768px) {
+            .archive-toc-nav {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                grid-template-rows: repeat(7, auto);
+                grid-auto-flow: column;
+                column-gap: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body class="relative">
+    <div class="fixed inset-0 z-[-1] bg-blueprint opacity-60"></div>
+
+    <header class="fixed top-0 inset-x-0 h-[100px] z-[3000] bg-white/90 backdrop-blur-xl border-b border-dojo-border">
+        <div class="h-full max-w-[980px] mx-auto px-6 lg:px-6 flex items-center justify-between">
+            <div class="logo-group flex flex-col cursor-pointer" onclick="location.href='index.html'">
+                <h1 class="font-light text-xl lg:text-2xl tracking-widest leading-none">極東退屈道場</h1>
+                <span class="font-mono text-[10px] tracking-[0.2em] text-dojo-sub mt-2 uppercase">Urban Research Theater</span>
+            </div>
+            <nav class="hidden md:block">
+                <ul class="flex gap-8 lg:gap-12 items-center">
+                    <li><a href="profile.html" class="font-mono text-xs tracking-widest opacity-60 hover:opacity-100 transition-opacity uppercase">Director</a></li>
+                    <li><a href="archive.html" class="font-mono text-xs tracking-widest opacity-100 uppercase border-b border-black pb-1">Archive</a></li>
+                    <li><a href="collaboration.html" class="font-mono text-xs tracking-widest opacity-60 hover:opacity-100 transition-opacity uppercase">Collaboration</a></li>
+                    <li><a href="links.html" class="font-mono text-xs tracking-widest opacity-60 hover:opacity-100 transition-opacity uppercase">Press</a></li>
+                    <li><a href="contact.html" class="flex items-center gap-3 px-5 py-2 border border-black text-xs font-mono font-bold tracking-widest hover:bg-black hover:text-white transition-all uppercase">Contact <i data-lucide="arrow-right" class="w-3 h-3"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <nav class="md:hidden fixed top-[100px] inset-x-0 z-[2900] bg-white/95 border-b border-dojo-border px-3 py-3">
+        <div class="max-w-[980px] mx-auto">
+            <ul class="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 font-mono text-[10px] sm:text-xs tracking-[0.1em] uppercase">
+                <li><a href="profile.html" class="opacity-70">Director</a></li>
+                <li><a href="archive.html" class="opacity-100 border-b border-black pb-0.5">Archive</a></li>
+                <li><a href="collaboration.html" class="opacity-70">Collaboration</a></li>
+                <li><a href="links.html" class="opacity-70">Press</a></li>
+                <li><a href="contact.html" class="font-bold">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="pt-[150px] md:pt-[100px]">
+        <section class="relative overflow-hidden px-6 lg:px-6 py-20 border-b border-dojo-border bg-white/40">
+            <div class="page-map-layer" aria-hidden="true"></div>
+            <div class="max-w-[980px] mx-auto relative z-[1]">
+                <h2 class="text-2xl md:text-3xl font-medium tracking-tight leading-snug text-dojo-text">上演作品一覧</h2>
+                <p class="mt-5 text-sm text-dojo-sub max-w-xl leading-relaxed">各作品のあらすじ、note の台本、公演サイト（公開中のもの）へのリンクです。</p>
+            </div>
+        </section>
+
+        <section class="max-w-[980px] mx-auto px-6 lg:px-6 py-10 border-b border-dojo-border" aria-labelledby="archive-toc-heading">
+            <h3 id="archive-toc-heading" class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-6">作品ジャンプ</h3>
+            <nav class="archive-toc-nav" aria-label="作品への内部リンク（新しい順・左列から上から下、続きは右列）">
+                <a href="#work-013" class="group flex flex-wrap items-baseline gap-x-3 gap-y-1 border-b border-dojo-border py-3 text-sm transition-colors hover:border-dojo-text/40"><span class="font-mono text-[10px] tabular-nums text-dojo-sub w-11 shrink-0">2023</span><span class="font-mono text-[10px] text-dojo-sub/80 w-9 shrink-0">#013</span><span class="text-dojo-text group-hover:opacity-80">コンテナ</span></a>
+                <a href="#work-012" class="group flex flex-wrap items-baseline gap-x-3 gap-y-1 border-b border-dojo-border py-3 text-sm transition-colors hover:border-dojo-text/40"><span class="font-mono text-[10px] tabular-nums text-dojo-sub w-11 shrink-0">2022</span><span class="font-mono text-[10px] text-dojo-sub/80 w-9 shrink-0">#012</span><span class="text-dojo-text group-hover:opacity-80">クロスロード</span></a>
+                <a href="#work-011" class="group flex flex-wrap items-baseline gap-x-3 gap-y-1 border-b border-dojo-border py-3 text-sm transition-colors hover:border-dojo-text/40"><span class="font-mono text-[10px] tabular-nums text-dojo-sub w-11 shrink-0">2021</span><span class="font-mono text-[10px] text-dojo-sub/80 w-9 shrink-0">#011</span><span class="text-dojo-text group-hover:opacity-80">LG20/21クロニクル</span></a>
+                <a href="#work-010" class="group flex flex-wrap items-baseline gap-x-3 gap-y-1 border-b border-dojo-border py-3 text-sm transition-colors hover:border-dojo-text/40"><span class="font-mono text-[10px] tabular-nums text-dojo-sub w-11 shrink-0">2019</span><span class="font-mono text-[10px] text-dojo-sub/80 w-9 shrink-0">#010</span><span class="text-dojo-text group-hover:opacity-80">ジャンクション</span></a>
+                <a href="#work-009" class="group flex flex-wrap items-baseline gap-x-3 gap-y-1 border-b border-dojo-border py-3 text-sm transition-colors hover:border-dojo-text/40"><span class="font-mono text-[10px] tabular-nums text-dojo-sub w-11 shrink-0">2018</span><span class="font-mono text-[10px] text-dojo-sub/80 w-9 shrink-0">#009</span><span class="text-dojo-text group-hover:opacity-80">808ダイエット</span></a>
+                <a href="#work-008" class="group flex flex-wrap items-baseline gap-x-3 gap-y-1 border-b border-dojo-border py-3 text-sm transition-colors hover:border-dojo-text/40"><span class="font-mono text-[10px] tabular-nums text-dojo-sub w-11 shrink-0">2017</span><span class="font-mono text-[10px] text-dojo-sub/80 w-9 shrink-0">#008</span><span class="text-dojo-text group-hover:opacity-80">ファントム</span></a>
+                <a href="#work-007" class="group flex flex-wrap items-baseline gap-x-3 gap-y-1 border-b border-dojo-border py-3 text-sm transition-colors hover:border-dojo-text/40"><span class="font-mono text-[10px] tabular-nums text-dojo-sub w-11 shrink-0">2016</span><span class="font-mono text-[10px] text-dojo-sub/80 w-9 shrink-0">#007</span><span class="text-dojo-text group-hover:opacity-80">百式サクセション</span></a>
+                <a href="#work-006" class="group flex flex-wrap items-baseline gap-x-3 gap-y-1 border-b border-dojo-border py-3 text-sm transition-colors hover:border-dojo-text/40"><span class="font-mono text-[10px] tabular-nums text-dojo-sub w-11 shrink-0">2014</span><span class="font-mono text-[10px] text-dojo-sub/80 w-9 shrink-0">#006</span><span class="text-dojo-text group-hover:opacity-80">ガベコレ</span></a>
+                <a href="#work-005" class="group flex flex-wrap items-baseline gap-x-3 gap-y-1 border-b border-dojo-border py-3 text-sm transition-colors hover:border-dojo-text/40"><span class="font-mono text-[10px] tabular-nums text-dojo-sub w-11 shrink-0">2013</span><span class="font-mono text-[10px] text-dojo-sub/80 w-9 shrink-0">#005</span><span class="text-dojo-text group-hover:opacity-80">タイムズ</span></a>
+                <a href="#work-004" class="group flex flex-wrap items-baseline gap-x-3 gap-y-1 border-b border-dojo-border py-3 text-sm transition-colors hover:border-dojo-text/40"><span class="font-mono text-[10px] tabular-nums text-dojo-sub w-11 shrink-0">2010</span><span class="font-mono text-[10px] text-dojo-sub/80 w-9 shrink-0">#004</span><span class="text-dojo-text group-hover:opacity-80">サブウェイ</span></a>
+                <a href="#work-003" class="group flex flex-wrap items-baseline gap-x-3 gap-y-1 border-b border-dojo-border py-3 text-sm transition-colors hover:border-dojo-text/40"><span class="font-mono text-[10px] tabular-nums text-dojo-sub w-11 shrink-0">2009</span><span class="font-mono text-[10px] text-dojo-sub/80 w-9 shrink-0">#003</span><span class="text-dojo-text group-hover:opacity-80">リメンバーワイキキビーチ</span></a>
+                <a href="#work-002" class="group flex flex-wrap items-baseline gap-x-3 gap-y-1 border-b border-dojo-border py-3 text-sm transition-colors hover:border-dojo-text/40"><span class="font-mono text-[10px] tabular-nums text-dojo-sub w-11 shrink-0">2008</span><span class="font-mono text-[10px] text-dojo-sub/80 w-9 shrink-0">#002</span><span class="text-dojo-text group-hover:opacity-80">ネクストバッターズサークル</span></a>
+                <a href="#work-001" class="group flex flex-wrap items-baseline gap-x-3 gap-y-1 border-b border-dojo-border py-3 text-sm transition-colors hover:border-dojo-text/40"><span class="font-mono text-[10px] tabular-nums text-dojo-sub w-11 shrink-0">2007</span><span class="font-mono text-[10px] text-dojo-sub/80 w-9 shrink-0">#001</span><span class="text-dojo-text group-hover:opacity-80">延髄がギリです。</span></a>
+            </nav>
+        </section>
+
+        <section class="max-w-[980px] mx-auto px-6 lg:px-6 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <article id="work-013" class="border border-dojo-border bg-white p-6"><div class="relative mb-4"><img src="picture/works/work_013_container.jpg" alt="work_013" class="w-full aspect-video object-cover border border-dojo-border"><span class="work-badge absolute top-0 left-0 bg-white/95 border-r border-b border-dojo-border font-mono text-[10px] px-3 py-1">#013</span></div><p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">2023</p><h3 class="text-lg">コンテナ</h3><p class="text-sm text-dojo-sub my-4">夢洲の湿地とコンテナターミナルという対照的な風景を起点に、港湾都市・大阪を「規格化された箱」の視点から捉え直す作品。物流、万博、IRといった都市更新の現場に積層する物語を掘り起こす。</p><a href="https://note.com/djtaikutsu/n/nb7db537b36bc" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[10px] font-mono tracking-widest uppercase border border-black px-4 py-2 hover:bg-black hover:text-white transition-all">Script on note <i data-lucide="external-link" class="w-3 h-3"></i></a><a href="https://container.taikutsu.info/top/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[10px] font-mono tracking-widest uppercase border border-dojo-border px-4 py-2 hover:bg-black hover:text-white hover:border-black transition-all ml-3">公演サイト <i data-lucide="external-link" class="w-3 h-3"></i></a></article>
+                <article id="work-012" class="border border-dojo-border bg-white p-6"><div class="relative mb-4"><img src="picture/works/work_012_crossroad.jpg" alt="work_012" class="w-full aspect-video object-cover border border-dojo-border"><span class="work-badge absolute top-0 left-0 bg-white/95 border-r border-b border-dojo-border font-mono text-[10px] px-3 py-1">#012</span></div><p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">2022</p><h3 class="text-lg">クロスロード</h3><p class="text-sm text-dojo-sub my-4">大阪大空襲の記憶が残る場所を参照点に、戦争、避難、約束の継承を描く。現在の都市風景と遠隔地の戦禍を接続し、「難民」という言葉の輪郭を舞台の上で問い直す試み。</p><a href="https://note.com/djtaikutsu/n/ncda4d8e920a3" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[10px] font-mono tracking-widest uppercase border border-black px-4 py-2 hover:bg-black hover:text-white transition-all">Script on note <i data-lucide="external-link" class="w-3 h-3"></i></a><a href="https://crossroad.taikutsu.info/crossroad/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[10px] font-mono tracking-widest uppercase border border-dojo-border px-4 py-2 hover:bg-black hover:text-white hover:border-black transition-all ml-3">公演サイト <i data-lucide="external-link" class="w-3 h-3"></i></a></article>
+                <article id="work-011" class="border border-dojo-border bg-white p-6"><div class="relative mb-4"><img src="picture/works/work_011_lg2021.jpg" alt="work_011" class="w-full aspect-video object-cover border border-dojo-border"><span class="work-badge absolute top-0 left-0 bg-white/95 border-r border-b border-dojo-border font-mono text-[10px] px-3 py-1">#011</span></div><p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">2021</p><h3 class="text-lg">LG20/21クロニクル</h3><p class="text-sm text-dojo-sub my-4">タワーマンションと電話ボックスを軸に、会場の上下階に分かれた観客が異なる視点を体験する構造を採用。都市住民の距離感や分断を、上演形式そのものとして可視化した作品。</p><a href="https://note.com/djtaikutsu/n/n41286ba41a33" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[10px] font-mono tracking-widest uppercase border border-black px-4 py-2 hover:bg-black hover:text-white transition-all">Script on note <i data-lucide="external-link" class="w-3 h-3"></i></a><a href="https://ladderspapers.wixsite.com/lg21chronicle" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[10px] font-mono tracking-widest uppercase border border-dojo-border px-4 py-2 hover:bg-black hover:text-white hover:border-black transition-all ml-3">公演サイト <i data-lucide="external-link" class="w-3 h-3"></i></a></article>
+                <article id="work-010" class="border border-dojo-border bg-white p-6"><div class="relative mb-4"><img src="picture/works/work_010_junction.jpg" alt="work_010" class="w-full aspect-video object-cover border border-dojo-border"><span class="work-badge absolute top-0 left-0 bg-white/95 border-r border-b border-dojo-border font-mono text-[10px] px-3 py-1">#010</span></div><p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">2019</p><h3 class="text-lg">ジャンクション</h3><p class="text-sm text-dojo-sub my-4">江之子島を舞台に、観客が俳優に導かれて劇場内外を巡るツアーパフォーマンス。水没した架空都市「ソコハカ」の来歴を辿りながら、都市の記憶と未来像を身体的に体験する。</p><a href="https://note.com/djtaikutsu/n/na613cb4b5b0a" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[10px] font-mono tracking-widest uppercase border border-black px-4 py-2 hover:bg-black hover:text-white transition-all">Script on note <i data-lucide="external-link" class="w-3 h-3"></i></a><a href="https://taikutsu.wixsite.com/junction" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[10px] font-mono tracking-widest uppercase border border-dojo-border px-4 py-2 hover:bg-black hover:text-white hover:border-black transition-all ml-3">公演サイト <i data-lucide="external-link" class="w-3 h-3"></i></a></article>
+                <article id="work-009" class="border border-dojo-border bg-white p-6"><div class="relative mb-4"><img src="picture/works/work_009_808diet.jpg" alt="work_009" class="w-full aspect-video object-cover border border-dojo-border"><span class="work-badge absolute top-0 left-0 bg-white/95 border-r border-b border-dojo-border font-mono text-[10px] px-3 py-1">#009</span></div><p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">2018</p><h3 class="text-lg">808ダイエット</h3><p class="text-sm text-dojo-sub my-4">東横堀川を題材に、橋を跨ぐ移動を通じて大阪の断片的な風景を採集する。かつて都市の境界線であった水路を辿りながら、現在の都市生活の身体感覚を更新していく。</p><a href="https://note.com/djtaikutsu/n/n5a523682ba88" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[10px] font-mono tracking-widest uppercase border border-black px-4 py-2 hover:bg-black hover:text-white transition-all">Script on note <i data-lucide="external-link" class="w-3 h-3"></i></a><a href="https://taikutsu.wixsite.com/808diet" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[10px] font-mono tracking-widest uppercase border border-dojo-border px-4 py-2 hover:bg-black hover:text-white hover:border-black transition-all ml-3">公演サイト <i data-lucide="external-link" class="w-3 h-3"></i></a></article>
+                <article id="work-008" class="border border-dojo-border bg-white p-6"><div class="relative mb-4"><img src="picture/works/work_008_phantom.jpg" alt="work_008" class="w-full aspect-video object-cover border border-dojo-border"><span class="work-badge absolute top-0 left-0 bg-white/95 border-r border-b border-dojo-border font-mono text-[10px] px-3 py-1">#008</span></div><p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">2017</p><h3 class="text-lg">ファントム</h3><p class="text-sm text-dojo-sub my-4">コインロッカー内部で目覚めた人物たちの状況設定から、都市モジュールが連鎖的に変形していく構造を立ち上げる。閉じた空間を通して都市の匿名性と不安を描き出す。</p><a href="https://note.com/djtaikutsu/n/n3ad3e278bb03" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[10px] font-mono tracking-widest uppercase border border-black px-4 py-2 hover:bg-black hover:text-white transition-all">Script on note <i data-lucide="external-link" class="w-3 h-3"></i></a><a href="https://phantom.taikutsu.info/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[10px] font-mono tracking-widest uppercase border border-dojo-border px-4 py-2 hover:bg-black hover:text-white hover:border-black transition-all ml-3">公演サイト <i data-lucide="external-link" class="w-3 h-3"></i></a></article>
+                <article id="work-007" class="border border-dojo-border bg-white p-6"><div class="relative mb-4"><img src="picture/works/work_007_hyakushiki.jpg" alt="work_007" class="w-full aspect-video object-cover border border-dojo-border"><span class="work-badge absolute top-0 left-0 bg-white/95 border-r border-b border-dojo-border font-mono text-[10px] px-3 py-1">#007</span></div><p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">2016</p><h3 class="text-lg">百式サクセション</h3><p class="text-sm text-dojo-sub my-4">かつての青空カラオケ文化が消えた天王寺公園を参照し、整備された空間に残る空白を描く。都市から押し出された人々の気配を追いながら、報告劇の形式で記憶を再構築する。</p><a href="https://note.com/djtaikutsu/n/nd2872d5f364d" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[10px] font-mono tracking-widest uppercase border border-black px-4 py-2 hover:bg-black hover:text-white transition-all">Script on note <i data-lucide="external-link" class="w-3 h-3"></i></a><a href="https://100shiki.taikutsu.info/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[10px] font-mono tracking-widest uppercase border border-dojo-border px-4 py-2 hover:bg-black hover:text-white hover:border-black transition-all ml-3">公演サイト <i data-lucide="external-link" class="w-3 h-3"></i></a></article>
+                <article id="work-006" class="border border-dojo-border bg-white p-6"><div class="relative mb-4"><img src="picture/works/work_006_garbecolle.jpg" alt="work_006" class="w-full aspect-video object-cover border border-dojo-border"><span class="work-badge absolute top-0 left-0 bg-white/95 border-r border-b border-dojo-border font-mono text-[10px] px-3 py-1">#006</span></div><p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">2014</p><h3 class="text-lg">ガベコレ</h3><p class="text-sm text-dojo-sub my-4">開発が停滞した埋立地・舞洲を題材に、公的文書と市民インタビューをコラージュ。都市計画と言説のズレを俳優の身体と移動体験で可視化し、「この街とは何か」を問う。</p><a href="https://note.com/djtaikutsu/n/ndad720adfd27" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[10px] font-mono tracking-widest uppercase border border-black px-4 py-2 hover:bg-black hover:text-white transition-all">Script on note <i data-lucide="external-link" class="w-3 h-3"></i></a></article>
+                <article id="work-005" class="border border-dojo-border bg-white p-6"><div class="relative mb-4"><img src="picture/works/work_005_times.jpg" alt="work_005" class="w-full aspect-video object-cover border border-dojo-border"><span class="work-badge absolute top-0 left-0 bg-white/95 border-r border-b border-dojo-border font-mono text-[10px] px-3 py-1">#005</span></div><p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">2013</p><h3 class="text-lg">タイムズ</h3><p class="text-sm text-dojo-sub my-4">コインパーキングという宙づりの都市空間をモチーフに、断片的な物語群を高速で接続する。軽い躁状態の都市と人間の哀しみを同時に浮かび上がらせる初期代表作。</p><a href="https://note.com/djtaikutsu/n/n155142e44c62" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[10px] font-mono tracking-widest uppercase border border-black px-4 py-2 hover:bg-black hover:text-white transition-all">Script on note <i data-lucide="external-link" class="w-3 h-3"></i></a><a href="http://times.taikutsu.info/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[10px] font-mono tracking-widest uppercase border border-dojo-border px-4 py-2 hover:bg-black hover:text-white hover:border-black transition-all ml-3">公演サイト <i data-lucide="external-link" class="w-3 h-3"></i></a></article>
+                <article id="work-004" class="border border-dojo-border bg-white p-6"><div class="relative mb-4"><img src="picture/works/work_004_subway.jpg" alt="work_004" class="w-full aspect-video object-cover border border-dojo-border"><span class="work-badge absolute top-0 left-0 bg-white/95 border-r border-b border-dojo-border font-mono text-[10px] px-3 py-1">#004</span></div><p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">2010</p><h3 class="text-lg">サブウェイ</h3><p class="text-sm text-dojo-sub my-4">地下鉄という都市インフラを軸に、都市生活者の移動と孤独、接続の感覚を描く。のちの再演・ツアー展開へ繋がる、極東退屈道場の転換点となる作品。</p><a href="https://note.com/djtaikutsu/n/n864fba31569a" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[10px] font-mono tracking-widest uppercase border border-black px-4 py-2 hover:bg-black hover:text-white transition-all">Script on note <i data-lucide="external-link" class="w-3 h-3"></i></a></article>
+                <article id="work-003" class="border border-dojo-border bg-white p-6"><div class="relative mb-4"><img src="picture/works/work_003_waikiki.jpg" alt="work_003" class="w-full aspect-video object-cover border border-dojo-border"><span class="work-badge absolute top-0 left-0 bg-white/95 border-r border-b border-dojo-border font-mono text-[10px] px-3 py-1">#003</span></div><p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">2009</p><h3 class="text-lg">リメンバーワイキキビーチ</h3><p class="text-sm text-dojo-sub my-4">都市風景に重なる記憶の層を追い、現実と虚構の境界を横断する初期作品。後年の都市リサーチ型作品群へと連なる視点がすでに提示されている。</p><a href="https://note.com/djtaikutsu/n/n7c4550386be8" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[10px] font-mono tracking-widest uppercase border border-black px-4 py-2 hover:bg-black hover:text-white transition-all">Script on note <i data-lucide="external-link" class="w-3 h-3"></i></a></article>
+                <article id="work-002" class="border border-dojo-border bg-white p-6"><div class="relative mb-4"><img src="picture/works/work_002_nextbatters.jpg" alt="work_002" class="w-full aspect-video object-cover border border-dojo-border"><span class="work-badge absolute top-0 left-0 bg-white/95 border-r border-b border-dojo-border font-mono text-[10px] px-3 py-1">#002</span></div><p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">2008</p><h3 class="text-lg">ネクストバッターズサークル</h3><p class="text-sm text-dojo-sub my-4">都市の周縁に立つ人物たちの声を重ね、関係の輪郭を更新していく第2作。のちの報告劇的手法の萌芽が見える、重要な初期作。</p><a href="https://note.com/djtaikutsu/n/nb2edd240e1aa" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[10px] font-mono tracking-widest uppercase border border-black px-4 py-2 hover:bg-black hover:text-white transition-all">Script on note <i data-lucide="external-link" class="w-3 h-3"></i></a></article>
+                <article id="work-001" class="border border-dojo-border bg-white p-6 md:col-span-2"><div class="relative mb-4"><img src="picture/works/work_001_enzui.jpg" alt="work_001" class="w-full aspect-video object-cover border border-dojo-border"><span class="work-badge absolute top-0 left-0 bg-white/95 border-r border-b border-dojo-border font-mono text-[10px] px-3 py-1">#001</span></div><p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">2007</p><h3 class="text-lg">延髄がギリです。</h3><p class="text-sm text-dojo-sub my-4">極東退屈道場の起点となる第1作。以後一貫して続く「都市観測を劇化する」方向性の原点として、現在の作品群を理解するうえでも重要な位置を占める。</p><a href="https://note.com/djtaikutsu/n/na6493f96e3ba" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[10px] font-mono tracking-widest uppercase border border-black px-4 py-2 hover:bg-black hover:text-white transition-all">Script on note <i data-lucide="external-link" class="w-3 h-3"></i></a></article>
+            </div>
+            <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
+                <a href="contact.html#requests" class="inline-flex items-center gap-3 px-5 py-2 border border-black text-xs font-mono font-bold tracking-widest hover:bg-black hover:text-white transition-all uppercase">
+                    依頼・上演・台本使用許諾 <i data-lucide="arrow-right" class="w-3 h-3"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+    <footer class="px-6 lg:px-12 py-16 bg-white border-t border-dojo-border">
+        <div class="max-w-[980px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div class="font-mono text-[10px] tracking-widest opacity-40 uppercase">&copy; 2026 Kyokuto Taikutsu Dojo</div>
+            <div class="flex items-center gap-5">
+                <a href="https://x.com/kyokuto2007" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" title="X (Twitter)" class="text-dojo-sub hover:text-dojo-text transition-colors"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.91-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                <a href="https://www.youtube.com/user/DJtaikutsu/videos" target="_blank" rel="noopener noreferrer" aria-label="YouTube" title="YouTube" class="text-dojo-sub hover:text-dojo-text transition-colors"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+                <a href="https://www.facebook.com/dojotaikutsu" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook" class="text-dojo-sub hover:text-dojo-text transition-colors"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+                <a href="https://note.com/djtaikutsu" target="_blank" rel="noopener noreferrer" aria-label="note" title="note" class="text-dojo-sub hover:text-dojo-text transition-colors"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zm-7 3h2v2h2v2h-2v2h-2V10H10V8h2V6zm-2 8h6v2h-6v-2z"/></svg></a>
+            </div>
+        </div>
+    </footer>
+    <script>lucide.createIcons();</script>
+</body>
+</html>

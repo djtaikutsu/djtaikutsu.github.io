@@ -1,0 +1,145 @@
+<!--
+==========================================
+Version: 1.5.13
+Date: 2026-03-29
+Summary: 全ページのナビ順序を director→archive→collaboration→press に統一。
+Author: Codex
+==========================================
+-->
+<!DOCTYPE html>
+<html lang="ja" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Director Profile | 極東退屈道場</title>
+    <meta name="description" content="極東退屈道場 主宰・林慎一郎のプロフィールとステートメント。都市観測に基づく劇作の思想を掲載。">
+    <meta property="og:title" content="Director Profile | 極東退屈道場">
+    <meta property="og:description" content="主宰・林慎一郎のプロフィールと創作ステートメント。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="./profile.html">
+    <meta property="og:image" content="picture/common/ogp_default.svg">
+    <link rel="icon" type="image/svg+xml" href="picture/common/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;300;400;500&family=Noto+Sans+JP:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { 'dojo-bg': '#ffffff', 'dojo-text': '#1a1a1a', 'dojo-sub': '#888888', 'dojo-border': '#e2e2e2', 'dojo-grid': '#f8f8f8' },
+                    fontFamily: { sans: ['Noto Sans JP', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: theme('colors.dojo-bg'); color: theme('colors.dojo-text'); -webkit-font-smoothing: antialiased; }
+        .bg-blueprint { background-image: linear-gradient(theme('colors.dojo-grid') 1px, transparent 1px), linear-gradient(90deg, theme('colors.dojo-grid') 1px, transparent 1px); background-size: 80px 80px; }
+        .page-map-layer {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            overflow: hidden;
+            background-image: url("picture/common/hero_map_watermark.svg");
+            background-repeat: no-repeat;
+            background-size: min(138%, 1680px) auto;
+            background-position: 50% 46%;
+            opacity: 0.12;
+        }
+    </style>
+</head>
+<body class="relative">
+    <div class="fixed inset-0 z-[-1] bg-blueprint opacity-60"></div>
+
+    <header class="fixed top-0 inset-x-0 h-[100px] z-[3000] bg-white/90 backdrop-blur-xl border-b border-dojo-border">
+        <div class="h-full max-w-[980px] mx-auto px-6 lg:px-6 flex items-center justify-between">
+            <div class="logo-group flex flex-col cursor-pointer" onclick="location.href='index.html'">
+                <h1 class="font-light text-xl lg:text-2xl tracking-widest leading-none">極東退屈道場</h1>
+                <span class="font-mono text-[10px] tracking-[0.2em] text-dojo-sub mt-2 uppercase">Urban Research Theater</span>
+            </div>
+            <nav class="hidden md:block">
+                <ul class="flex gap-8 lg:gap-12 items-center">
+                    <li><a href="profile.html" class="font-mono text-xs tracking-widest opacity-100 uppercase border-b border-black pb-1">Director</a></li>
+                    <li><a href="archive.html" class="font-mono text-xs tracking-widest opacity-60 hover:opacity-100 transition-opacity uppercase">Archive</a></li>
+                    <li><a href="collaboration.html" class="font-mono text-xs tracking-widest opacity-60 hover:opacity-100 transition-opacity uppercase">Collaboration</a></li>
+                    <li><a href="links.html" class="font-mono text-xs tracking-widest opacity-60 hover:opacity-100 transition-opacity uppercase">Press</a></li>
+                    <li><a href="contact.html" class="flex items-center gap-3 px-5 py-2 border border-black text-xs font-mono font-bold tracking-widest hover:bg-black hover:text-white transition-all uppercase">Contact <i data-lucide="arrow-right" class="w-3 h-3"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <nav class="md:hidden fixed top-[100px] inset-x-0 z-[2900] bg-white/95 border-b border-dojo-border px-3 py-3">
+        <div class="max-w-[980px] mx-auto">
+            <ul class="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 font-mono text-[10px] sm:text-xs tracking-[0.1em] uppercase">
+                <li><a href="profile.html" class="opacity-100 border-b border-black pb-0.5">Director</a></li>
+                <li><a href="archive.html" class="opacity-70">Archive</a></li>
+                <li><a href="collaboration.html" class="opacity-70">Collaboration</a></li>
+                <li><a href="links.html" class="opacity-70">Press</a></li>
+                <li><a href="contact.html" class="font-bold">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="pt-[150px] md:pt-[100px]">
+        <div class="max-w-[980px] mx-auto grid grid-cols-1 md:grid-cols-[300px_1fr] border-b border-dojo-border min-h-screen">
+            <aside class="border-r border-dojo-border p-6 lg:p-8">
+                <div class="sticky top-[140px]">
+                    <div class="aspect-[3/4] bg-gray-100 mb-8 border border-dojo-border overflow-hidden">
+                        <img src="picture/profile/profile.jpg" alt="profile_hayashi" class="w-full h-full object-cover">
+                    </div>
+                    <h2 class="text-2xl font-light mb-2">林 慎一郎</h2>
+                    <p class="font-mono text-xs text-dojo-sub uppercase tracking-widest">Shinichiro Hayashi</p>
+                    <p class="mt-6 text-xs leading-relaxed text-dojo-sub">北海道函館市出身。劇作家・演出家。<br>京都大学総合人間学部卒業。</p>
+                </div>
+            </aside>
+            <section class="relative overflow-hidden p-6 lg:p-12 bg-white/40">
+                <div class="page-map-layer" aria-hidden="true"></div>
+                <div class="max-w-3xl relative z-[1]">
+                    <span class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-8 block">Statement</span>
+                    <h3 class="text-2xl md:text-3xl font-light leading-relaxed mb-10">都市を読み解き、断片の集積から演劇を立ち上げる。</h3>
+                    <p class="text-sm md:text-base font-light leading-loose text-justify text-dojo-text mb-8">2007年、劇作家・演出家の林慎一郎が、公演ごとに俳優を集める個人プロデュース「極東退屈道場」を立ち上げる。以降、都市生活の取材に基づいた断片の集積によって演劇作品を創作し続けている。</p>
+                    <p class="text-sm md:text-base font-light leading-loose text-justify text-dojo-text mb-8">2011年『サブウェイ』で第18回OMS戯曲賞大賞、2013年『タイムズ』で第20回OMS戯曲賞特別賞を受賞。2016年『PORTAL』（演出：松本雄吉）で第61回岸田國士戯曲賞候補。2019年以降は、劇場空間に留まらず、俳優のナビゲーションで街を歩くツアーパフォーマンスなど、都市との距離を更新する表現にも取り組む。</p>
+                    <p class="text-sm md:text-base font-light leading-loose text-justify text-dojo-text mb-12">大阪市立／府立咲くやこの花高校演劇科講師を10年にわたり務めるなど、劇作・演出に加えて教育・ワークショップ領域でも活動。2022年より京都芸術大学非常勤講師。</p>
+
+                    <div class="border-t border-dojo-border pt-8">
+                        <span class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-6 block">Selected Works</span>
+                        <ul class="space-y-3 text-sm md:text-base font-light leading-relaxed">
+                            <li>『延髄がギリです。』（2007年／第25回名古屋市文化振興賞候補）</li>
+                            <li>『サブウェイ』（2010年／第18回OMS戯曲賞大賞）</li>
+                            <li>『タイムズ』（2012年／第20回OMS戯曲賞特別賞）</li>
+                            <li>『ガベコレ』（2015年／第15回AAF戯曲賞候補）</li>
+                            <li>『ジャンクション』（2019年／ステージぴあ ステージ・オブ・ザ・イヤー2019 関西演劇特別賞）</li>
+                            <li>『LG20/21クロニクル』（2021年／大阪市文化祭奨励賞）</li>
+                            <li>『クロスロード』（2022年／第一回かんさい演劇大賞 優秀作品賞）</li>
+                        </ul>
+                    </div>
+
+                    <div class="border-t border-dojo-border pt-8 mt-10">
+                        <span class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-6 block">Writing For Other Projects</span>
+                        <ul class="space-y-3 text-sm md:text-base font-light leading-relaxed">
+                            <li>プロジェクトKUTO-10『ストレッチポリマーインターフェース』（2014年／演出：内藤裕敬）</li>
+                            <li>松本雄吉×林慎一郎『PORTAL』（2016年／演出：松本雄吉／第61回岸田國士戯曲賞候補）</li>
+                            <li>劇団壱劇屋「supermarket!!!」（2023年／短編戯曲提供／大阪市文化祭奨励賞受賞）</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer class="px-6 lg:px-12 py-16 bg-white border-t border-dojo-border">
+        <div class="max-w-[980px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div class="font-mono text-[10px] tracking-widest opacity-40 uppercase">&copy; 2026 Kyokuto Taikutsu Dojo</div>
+            <div class="flex items-center gap-5">
+                <a href="https://x.com/kyokuto2007" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" title="X (Twitter)" class="text-dojo-sub hover:text-dojo-text transition-colors"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.91-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                <a href="https://www.youtube.com/user/DJtaikutsu/videos" target="_blank" rel="noopener noreferrer" aria-label="YouTube" title="YouTube" class="text-dojo-sub hover:text-dojo-text transition-colors"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+                <a href="https://www.facebook.com/dojotaikutsu" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook" class="text-dojo-sub hover:text-dojo-text transition-colors"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+                <a href="https://note.com/djtaikutsu" target="_blank" rel="noopener noreferrer" aria-label="note" title="note" class="text-dojo-sub hover:text-dojo-text transition-colors"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zm-7 3h2v2h2v2h-2v2h-2V10H10V8h2V6zm-2 8h6v2h-6v-2z"/></svg></a>
+            </div>
+        </div>
+    </footer>
+    <script>lucide.createIcons();</script>
+</body>
+</html>
