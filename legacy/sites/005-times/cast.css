@@ -1,0 +1,75 @@
+@charset "UTF-8";
+/* CSS Document */
+
+*{
+	margin:0;
+	padding:0;
+	line-height:18px;
+}
+
+img{
+	border:0;
+}
+#outline{
+	padding-top:30px;
+	}
+.kuhaku{
+	height:50px;}	
+.box{
+	margin-top:20px;
+	margin-left:20px;
+	
+	}
+.whi{
+	color:#F9F9F9;
+	}
+.bla{
+	color:#000000;
+	}	
+
+	
+.photo{
+	margin-left:20px;
+	float:left;
+	}	
+.bun{
+	margin-left:100px;
+	width:50%;
+	float:left;
+	}	
+.box2{
+	margin-left:20px;
+	margin-top:70px;
+	}	
+.photo2{
+	
+	float:left;
+	}	
+.bun2{
+	margin-top:20px;
+	margin-left:10px;
+	width:60%;
+	float:left;
+	}	
+.box3{
+	margin-left:20px;
+	margin-top:10px;
+	}	
+a{
+	color:#F9F9F9;
+	text-decoration:none;
+	
+	}		
+a:hover{
+	color:#f6b51d;
+	}	
+.kiro{
+	color:#F8E78D;}	
+
+.pagetop2{
+/*	
+ display:none;*/
+ position:fixed;
+ bottom:30px;
+ right:95px;
+}	

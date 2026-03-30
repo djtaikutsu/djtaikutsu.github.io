@@ -2,9 +2,9 @@
 # -*- coding: utf-8 -*-
 """
 ==========================================
-Version: 1.0.3
-Date: 2026-03-29
-Summary: リポジトリへ復帰。同一ホストのHTML/CSS/JS/画像を静的ミラーする補助スクリプト
+Version: 1.0.7
+Date: 2026-03-30
+Summary: CSS内 url(...) も画像取得・ローカル書き換え
 Author: Codex
 ==========================================
 """
@@ -73,12 +73,47 @@ class LinkCollector(html.parser.HTMLParser):
                 candidates.append(ad["href"])
         elif tag == "script" and ad.get("src"):
             candidates.append(ad["src"])
-        elif tag == "img" and ad.get("src"):
-            candidates.append(ad["src"])
+        elif tag == "img":
+            # srcset/data-srcset は "URL descriptor, URL descriptor" 形式のため、
+            # 先頭URLだけを個別候補として回収する。
+            if ad.get("src"):
+                candidates.append(ad["src"])
+            if ad.get("data-src"):
+                candidates.append(ad["data-src"])
+            for key in ("srcset", "data-srcset"):
+                v = ad.get(key)
+                if not v:
+                    continue
+                for part in v.split(","):
+                    part = part.strip()
+                    if not part:
+                        continue
+                    tokens = part.split()
+                    if tokens:
+                        candidates.append(tokens[0])
         elif tag in ("a", "area") and ad.get("href"):
             candidates.append(ad["href"])
-        elif tag in ("source",) and ad.get("src"):
-            candidates.append(ad["src"])
+        elif tag in ("source",):
+            if ad.get("src"):
+                candidates.append(ad["src"])
+            v = ad.get("srcset")
+            if v:
+                for part in v.split(","):
+                    part = part.strip()
+                    if not part:
+                        continue
+                    tokens = part.split()
+                    if tokens:
+                        candidates.append(tokens[0])
+        style_val = ad.get("style")
+        if style_val and "url(" in style_val:
+            # style="... background-image:url(http(s)://host/path) ..." のような記法を拾う
+            for m in re.finditer(
+                r'url\((["\']?)(https?://[^)"\']+)\1\)',
+                style_val,
+                flags=re.I,
+            ):
+                candidates.append(m.group(2))
         for c in candidates:
             if c:
                 self.urls.append(c)
@@ -154,6 +189,7 @@ def main() -> int:
         is_html = "html" in ctype or url.endswith((".htm", ".html")) or (
             ctype.startswith("text/") and b"<html" in data[:2000].lower()
         )
+        is_css = url.lower().endswith(".css") or ctype.startswith("text/css")
 
         if is_html:
             html_pages += 1
@@ -177,19 +213,64 @@ def main() -> int:
                 return rel.replace(os.sep, "/")
 
             def rewrite_attr(match: re.Match) -> str:
-                attr = match.group(1)
+                attr_raw = match.group(1)
+                attr = attr_raw.lower()
                 quote = match.group(2)
                 val = match.group(3)
+
+                if attr in ("srcset", "data-srcset"):
+                    # srcset/data-srcset は「URL descriptor, URL descriptor」の形式があるため、
+                    # まずカンマ区切りで分割し、各要素の先頭URLだけをローカルへ書き換える。
+                    rewritten_parts: List[str] = []
+                    for part in val.split(","):
+                        part = part.strip()
+                        if not part:
+                            continue
+                        tokens = part.split()
+                        if not tokens:
+                            continue
+                        first_url = tokens[0]
+                        abs_u = _norm_url(url, first_url)
+                        if abs_u and _same_host(abs_u, host):
+                            r = rel_for_target(abs_u)
+                            if r:
+                                tokens[0] = r
+                                rewritten_parts.append(" ".join(tokens))
+                                continue
+                        rewritten_parts.append(part)
+
+                    if rewritten_parts:
+                        new_val = ", ".join(rewritten_parts)
+                        return f"{attr_raw}={quote}{new_val}{quote}"
+                    return match.group(0)
+
                 abs_u = _norm_url(url, val)
                 if abs_u and _same_host(abs_u, host):
                     r = rel_for_target(abs_u)
                     if r:
-                        return f"{attr}={quote}{r}{quote}"
+                        return f"{attr_raw}={quote}{r}{quote}"
                 return match.group(0)
 
             text = re.sub(
-                r'(href|src)=(["\'])([^"\']+)\2',
+                r'(href|src|srcset|data-src|data-srcset)=(["\'])([^"\']+)\2',
                 rewrite_attr,
+                text,
+                flags=re.I,
+            )
+            def rewrite_css_url(match: re.Match) -> str:
+                quote = match.group(1)
+                val = match.group(2)
+                abs_u = _norm_url(url, val)
+                if abs_u and _same_host(abs_u, host):
+                    r = rel_for_target(abs_u)
+                    if r:
+                        return f"url({quote}{r}{quote})"
+                return match.group(0)
+
+            # style属性やstyleタグ内の url(http(s)://...) をローカル相対パスへ書き換え
+            text = re.sub(
+                r'url\((["\']?)(https?://[^)"\']+)\1\)',
+                rewrite_css_url,
                 text,
                 flags=re.I,
             )
@@ -199,6 +280,46 @@ def main() -> int:
                     local_path = os.path.join(local_path, "index.html")
                 elif not os.path.splitext(local_path)[1]:
                     local_path += ".html"
+
+        if is_css:
+            text = data.decode("utf-8", errors="replace")
+
+            def rel_for_target_css(target_url: str) -> Optional[str]:
+                if not _same_host(target_url, host):
+                    return None
+                cur_dir = os.path.dirname(local_path)
+                tgt_path = _local_path_for_url(site_out, host, target_url, args.flat)
+                rel = os.path.relpath(tgt_path, cur_dir)
+                return rel.replace(os.sep, "/")
+
+            # CSS内の url(...) を列挙して「同ホスト」参照の画像を取得キューへ追加
+            # - 例: background-image:url(images/top_bg.jpg)
+            # - 例: background-image:url(/images/foo.jpg)
+            url_pat = r'url\((["\']?)([^)"\']+)\1\)'
+
+            for m in re.finditer(url_pat, text, flags=re.I):
+                raw_val = m.group(2).strip()
+                if not raw_val:
+                    continue
+                if raw_val.startswith(("data:", "javascript:", "#")):
+                    continue
+                abs_u = _norm_url(url, raw_val)
+                if abs_u and _same_host(abs_u, host) and abs_u not in seen:
+                    queue.append(abs_u)
+
+            # url(...) 自体もローカル相対パスへ書き換え
+            def rewrite_css_url_any(match: re.Match) -> str:
+                quote = match.group(1)
+                val = match.group(2).strip()
+                abs_u = _norm_url(url, val)
+                if abs_u and _same_host(abs_u, host):
+                    r = rel_for_target_css(abs_u)
+                    if r:
+                        return f"url({quote}{r}{quote})"
+                return match.group(0)
+
+            text = re.sub(url_pat, rewrite_css_url_any, text, flags=re.I)
+            data = text.encode("utf-8", errors="replace")
 
         with open(local_path, "wb") as f:
             f.write(data)

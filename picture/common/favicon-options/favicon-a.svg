@@ -1,0 +1,13 @@
+<!--
+==========================================
+Version: 1.0.1
+Date: 2026-03-30
+Summary: Favicon option A.
+Author: Codex
+==========================================
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="favicon option A">
+  <rect width="64" height="64" rx="10" fill="#ffffff"/>
+  <rect x="7" y="7" width="50" height="50" rx="8" fill="#ffffff" stroke="#111111" stroke-width="2"/>
+  <text x="32" y="40" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" fill="#111111">K</text>
+</svg>

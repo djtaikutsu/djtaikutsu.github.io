@@ -1,0 +1,14 @@
+<!--
+==========================================
+Version: 1.0.1
+Date: 2026-03-30
+Summary: Favicon option B.
+Author: Codex
+==========================================
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="favicon option B">
+  <rect width="64" height="64" rx="10" fill="#ffffff"/>
+  <rect x="7" y="7" width="50" height="50" rx="8" fill="#ffffff" stroke="#111111" stroke-width="2"/>
+  <line x1="32" y1="13" x2="32" y2="51" stroke="#111111" stroke-width="2.5"/>
+  <line x1="13" y1="32" x2="51" y2="32" stroke="#111111" stroke-width="2.5"/>
+</svg>

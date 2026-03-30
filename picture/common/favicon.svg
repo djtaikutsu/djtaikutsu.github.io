@@ -1,5 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" fill="#ffffff"/>
-  <rect x="8" y="8" width="48" height="48" fill="#f8f8f8" stroke="#1a1a1a"/>
-  <text x="20" y="40" font-family="monospace" font-size="18" fill="#1a1a1a">KT</text>
+<!--
+==========================================
+Version: 1.0.2
+Date: 2026-03-30
+Summary: ファビコンを案B（十字線ミニマル）へ差し替え。
+Author: Codex
+==========================================
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="極東退屈道場 favicon">
+  <rect width="64" height="64" rx="10" fill="#ffffff"/>
+  <rect x="7" y="7" width="50" height="50" rx="8" fill="#ffffff" stroke="#111111" stroke-width="2"/>
+  <line x1="32" y1="13" x2="32" y2="51" stroke="#111111" stroke-width="2.5"/>
+  <line x1="13" y1="32" x2="51" y2="32" stroke="#111111" stroke-width="2.5"/>
 </svg>
