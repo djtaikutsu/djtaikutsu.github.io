@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+==========================================
+Version: 1.0.0
+Date: 2026-03-30
+Summary: 本体ページ向けXMLサイトマップを追加。
+Author: Codex
+==========================================
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://taikutsu.info/</loc>
+    <lastmod>2026-03-30</lastmod>
+  </url>
+  <url>
+    <loc>https://taikutsu.info/profile.html</loc>
+    <lastmod>2026-03-30</lastmod>
+  </url>
+  <url>
+    <loc>https://taikutsu.info/archive.html</loc>
+    <lastmod>2026-03-30</lastmod>
+  </url>
+  <url>
+    <loc>https://taikutsu.info/collaboration.html</loc>
+    <lastmod>2026-03-30</lastmod>
+  </url>
+  <url>
+    <loc>https://taikutsu.info/links.html</loc>
+    <lastmod>2026-03-30</lastmod>
+  </url>
+  <url>
+    <loc>https://taikutsu.info/contact.html</loc>
+    <lastmod>2026-03-30</lastmod>
+  </url>
+</urlset>
