@@ -1,34 +1,34 @@
 <!--
 ==========================================
-Version: 1.5.15
+Version: 1.0.0
 Date: 2026-03-30
-Summary: 英語版プロフィールへのJP/EN切替とhreflangを追加。
+Summary: 英語版プロフィールページを新規作成。
 Author: Codex
 ==========================================
 -->
 <!DOCTYPE html>
-<html lang="ja" class="scroll-smooth">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Director Profile | 極東退屈道場</title>
-    <meta name="description" content="極東退屈道場 主宰・林慎一郎のプロフィールとステートメント。都市観測に基づく劇作の思想を掲載。">
-    <meta property="og:title" content="Director Profile | 極東退屈道場">
-    <meta property="og:description" content="主宰・林慎一郎のプロフィールと創作ステートメント。">
+    <title>Director Profile | Kyokuto Taikutsu Dojo</title>
+    <meta name="description" content="Profile and statement of playwright and director Shinichiro Hayashi, founder of Kyokuto Taikutsu Dojo.">
+    <meta property="og:title" content="Director Profile | Kyokuto Taikutsu Dojo">
+    <meta property="og:description" content="Profile and artistic statement of Shinichiro Hayashi.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://taikutsu.info/profile.html">
-    <meta property="og:image" content="picture/common/ogp_default.svg">
+    <meta property="og:url" content="https://taikutsu.info/en/profile.html">
+    <meta property="og:image" content="https://taikutsu.info/picture/common/ogp_default.svg">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Director Profile | 極東退屈道場">
-    <meta name="twitter:description" content="主宰・林慎一郎のプロフィールと創作ステートメント。">
+    <meta name="twitter:title" content="Director Profile | Kyokuto Taikutsu Dojo">
+    <meta name="twitter:description" content="Profile and statement of Shinichiro Hayashi.">
     <meta name="twitter:image" content="https://taikutsu.info/picture/common/ogp_default.svg">
-    <link rel="canonical" href="https://taikutsu.info/profile.html">
+    <link rel="canonical" href="https://taikutsu.info/en/profile.html">
     <link rel="alternate" hreflang="ja" href="https://taikutsu.info/profile.html">
     <link rel="alternate" hreflang="en" href="https://taikutsu.info/en/profile.html">
-    <link rel="icon" type="image/svg+xml" href="picture/common/favicon.svg">
+    <link rel="icon" type="image/svg+xml" href="../picture/common/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;300;400;500&family=Noto+Sans+JP:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;300;400;500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -36,7 +36,7 @@ Author: Codex
             theme: {
                 extend: {
                     colors: { 'dojo-bg': '#ffffff', 'dojo-text': '#1a1a1a', 'dojo-sub': '#888888', 'dojo-border': '#e2e2e2', 'dojo-grid': '#f8f8f8' },
-                    fontFamily: { sans: ['Noto Sans JP', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] }
+                    fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] }
                 }
             }
         }
@@ -50,7 +50,7 @@ Author: Codex
             z-index: 0;
             pointer-events: none;
             overflow: hidden;
-            background-image: url("picture/common/hero_map_watermark.svg");
+            background-image: url("../picture/common/hero_map_watermark.svg");
             background-repeat: no-repeat;
             background-size: min(138%, 1680px) auto;
             background-position: 50% 46%;
@@ -64,17 +64,17 @@ Author: Codex
     <header class="fixed top-0 inset-x-0 h-[100px] z-[3000] bg-white/90 backdrop-blur-xl border-b border-dojo-border">
         <div class="h-full max-w-[980px] mx-auto px-6 lg:px-6 flex items-center justify-between">
             <div class="logo-group flex flex-col cursor-pointer" onclick="location.href='index.html'">
-                <h1 class="font-light text-xl lg:text-2xl tracking-widest leading-none">極東退屈道場</h1>
+                <h1 class="font-light text-xl lg:text-2xl tracking-widest leading-none">Kyokuto Taikutsu Dojo</h1>
                 <span class="font-mono text-[10px] tracking-[0.2em] text-dojo-sub mt-2 uppercase">Urban Research Theater</span>
             </div>
             <nav class="hidden md:block">
                 <ul class="flex gap-8 lg:gap-12 items-center">
                     <li><a href="profile.html" class="font-mono text-xs tracking-widest opacity-100 uppercase border-b border-black pb-1">Director</a></li>
                     <li><a href="archive.html" class="font-mono text-xs tracking-widest opacity-60 hover:opacity-100 transition-opacity uppercase">Archive</a></li>
-                    <li><a href="collaboration.html" class="font-mono text-xs tracking-widest opacity-60 hover:opacity-100 transition-opacity uppercase">Collaboration</a></li>
-                    <li><a href="links.html" class="font-mono text-xs tracking-widest opacity-60 hover:opacity-100 transition-opacity uppercase">Press</a></li>
-                    <li class="flex items-center gap-2 font-mono text-[10px] tracking-[0.18em] uppercase"><span class="border-b border-black pb-1">JP</span><span class="text-dojo-sub/50">/</span><a href="en/profile.html" class="opacity-60 hover:opacity-100 transition-opacity">EN</a></li>
-                    <li><a href="contact.html" class="flex items-center gap-3 px-5 py-2 border border-black text-xs font-mono font-bold tracking-widest hover:bg-black hover:text-white transition-all uppercase">Contact <i data-lucide="arrow-right" class="w-3 h-3"></i></a></li>
+                    <li><a href="../collaboration.html" class="font-mono text-xs tracking-widest opacity-60 hover:opacity-100 transition-opacity uppercase">Collaboration</a></li>
+                    <li><a href="../links.html" class="font-mono text-xs tracking-widest opacity-60 hover:opacity-100 transition-opacity uppercase">Press</a></li>
+                    <li class="flex items-center gap-2 font-mono text-[10px] tracking-[0.18em] uppercase"><a href="../profile.html" class="opacity-60 hover:opacity-100 transition-opacity">JP</a><span class="text-dojo-sub/50">/</span><span class="border-b border-black pb-1">EN</span></li>
+                    <li><a href="../contact.html" class="flex items-center gap-3 px-5 py-2 border border-black text-xs font-mono font-bold tracking-widest hover:bg-black hover:text-white transition-all uppercase">Contact <i data-lucide="arrow-right" class="w-3 h-3"></i></a></li>
                 </ul>
             </nav>
         </div>
@@ -84,10 +84,10 @@ Author: Codex
             <ul class="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 font-mono text-[10px] sm:text-xs tracking-[0.1em] uppercase">
                 <li><a href="profile.html" class="opacity-100 border-b border-black pb-0.5">Director</a></li>
                 <li><a href="archive.html" class="opacity-70">Archive</a></li>
-                <li><a href="collaboration.html" class="opacity-70">Collaboration</a></li>
-                <li><a href="links.html" class="opacity-70">Press</a></li>
-                <li><span class="border-b border-black pb-0.5">JP</span>/<a href="en/profile.html" class="opacity-70">EN</a></li>
-                <li><a href="contact.html" class="font-bold">Contact</a></li>
+                <li><a href="../collaboration.html" class="opacity-70">Collaboration</a></li>
+                <li><a href="../links.html" class="opacity-70">Press</a></li>
+                <li><a href="../profile.html" class="opacity-70">JP</a>/<span class="border-b border-black pb-0.5">EN</span></li>
+                <li><a href="../contact.html" class="font-bold">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -97,41 +97,41 @@ Author: Codex
             <aside class="border-r border-dojo-border p-6 lg:p-8">
                 <div class="sticky top-[140px]">
                     <div class="aspect-[3/4] bg-gray-100 mb-8 border border-dojo-border overflow-hidden">
-                        <img src="picture/profile/profile.jpg" alt="profile_hayashi" class="w-full h-full object-cover">
+                        <img src="../picture/profile/profile.jpg" alt="Shinichiro Hayashi portrait" class="w-full h-full object-cover">
                     </div>
-                    <h2 class="text-2xl font-light mb-2">林 慎一郎</h2>
-                    <p class="font-mono text-xs text-dojo-sub uppercase tracking-widest">Shinichiro Hayashi</p>
-                    <p class="mt-6 text-xs leading-relaxed text-dojo-sub">北海道函館市出身。劇作家・演出家。<br>京都大学総合人間学部卒業。</p>
+                    <h2 class="text-2xl font-light mb-2">Shinichiro Hayashi</h2>
+                    <p class="font-mono text-xs text-dojo-sub uppercase tracking-widest">Playwright / Director</p>
+                    <p class="mt-6 text-xs leading-relaxed text-dojo-sub">Born in Hakodate, Hokkaido.<br>Graduated from Kyoto University, Faculty of Integrated Human Studies.</p>
                 </div>
             </aside>
             <section class="relative overflow-hidden p-6 lg:p-12 bg-white/40">
                 <div class="page-map-layer" aria-hidden="true"></div>
                 <div class="max-w-3xl relative z-[1]">
                     <span class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-8 block">Statement</span>
-                    <h3 class="text-2xl md:text-3xl font-light leading-relaxed mb-10">都市を読み解き、断片の集積から演劇を立ち上げる。</h3>
-                    <p class="text-sm md:text-base font-light leading-loose text-justify text-dojo-text mb-8">2007年、劇作家・演出家の林慎一郎が、公演ごとに俳優を集める個人プロデュース「極東退屈道場」を立ち上げる。以降、都市生活の取材に基づいた断片の集積によって演劇作品を創作し続けている。</p>
-                    <p class="text-sm md:text-base font-light leading-loose text-justify text-dojo-text mb-8">2011年『サブウェイ』で第18回OMS戯曲賞大賞、2013年『タイムズ』で第20回OMS戯曲賞特別賞を受賞。2016年『PORTAL』（演出：松本雄吉）で第61回岸田國士戯曲賞候補。2019年以降は、劇場空間に留まらず、俳優のナビゲーションで街を歩くツアーパフォーマンスなど、都市との距離を更新する表現にも取り組む。</p>
-                    <p class="text-sm md:text-base font-light leading-loose text-justify text-dojo-text mb-12">大阪市立／府立咲くやこの花高校演劇科講師を10年にわたり務めるなど、劇作・演出に加えて教育・ワークショップ領域でも活動。2022年より京都芸術大学非常勤講師。</p>
+                    <h3 class="text-2xl md:text-3xl font-light leading-relaxed mb-10">Reading the city and building theater from gathered fragments.</h3>
+                    <p class="text-sm md:text-base font-light leading-loose text-justify text-dojo-text mb-8">In 2007, playwright and director Shinichiro Hayashi launched Kyokuto Taikutsu Dojo as an independent production platform that gathers performers for each project. Since then, he has continued creating theater from constellations of fragments collected through research into urban life.</p>
+                    <p class="text-sm md:text-base font-light leading-loose text-justify text-dojo-text mb-8">His play "Subway" received the Grand Prize at the 18th OMS Playwriting Prize, and "Times" received the Special Prize at the 20th edition. "PORTAL" (2016, directed by Yukichi Matsumoto) was nominated for the 61st Kishida Kunio Drama Award. Since 2019, Hayashi has expanded beyond conventional theater spaces into guided walking performances that rethink the distance between body and city.</p>
+                    <p class="text-sm md:text-base font-light leading-loose text-justify text-dojo-text mb-12">Alongside playwriting and directing, he has also worked extensively in education and workshops, including ten years as an instructor in the drama department of Sakuya Konohana High School in Osaka. Since 2022, he has served as a part-time lecturer at Kyoto University of the Arts.</p>
 
                     <div class="border-t border-dojo-border pt-8">
                         <span class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-6 block">Selected Works</span>
                         <ul class="space-y-3 text-sm md:text-base font-light leading-relaxed">
-                            <li>『延髄がギリです。』（2007年／第25回名古屋市文化振興賞候補）</li>
-                            <li>『サブウェイ』（2010年／第18回OMS戯曲賞大賞）</li>
-                            <li>『タイムズ』（2012年／第20回OMS戯曲賞特別賞）</li>
-                            <li>『ガベコレ』（2015年／第15回AAF戯曲賞候補）</li>
-                            <li>『ジャンクション』（2019年／ステージぴあ ステージ・オブ・ザ・イヤー2019 関西演劇特別賞）</li>
-                            <li>『LG20/21クロニクル』（2021年／大阪市文化祭奨励賞）</li>
-                            <li>『クロスロード』（2022年／第一回かんさい演劇大賞 優秀作品賞）</li>
+                            <li>"Enzui ga Giri desu." (2007 / nominated for the 25th Nagoya City Cultural Promotion Prize)</li>
+                            <li>"Subway" (2010 / Grand Prize, 18th OMS Playwriting Prize)</li>
+                            <li>"Times" (2012 / Special Prize, 20th OMS Playwriting Prize)</li>
+                            <li>"Garbecolle" (2015 / nominated for the 15th AAF Drama Award)</li>
+                            <li>"Junction" (2019 / Kansai Theater Special Prize, Stage of the Year 2019 by Stage Pia)</li>
+                            <li>"LG20/21 Chronicle" (2021 / Osaka City Cultural Festival Encouragement Prize)</li>
+                            <li>"Crossroad" (2022 / Outstanding Production Prize, 1st Kansai Theater Awards)</li>
                         </ul>
                     </div>
 
                     <div class="border-t border-dojo-border pt-8 mt-10">
                         <span class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-6 block">Writing For Other Projects</span>
                         <ul class="space-y-3 text-sm md:text-base font-light leading-relaxed">
-                            <li>プロジェクトKUTO-10『ストレッチポリマーインターフェース』（2014年／演出：内藤裕敬）</li>
-                            <li>松本雄吉×林慎一郎『PORTAL』（2016年／演出：松本雄吉／第61回岸田國士戯曲賞候補）</li>
-                            <li>劇団壱劇屋「supermarket!!!」（2023年／短編戯曲提供／大阪市文化祭奨励賞受賞）</li>
+                            <li>Project KUTO-10, "Stretch Polymer Interface" (2014 / directed by Hironori Naito)</li>
+                            <li>Yukichi Matsumoto x Shinichiro Hayashi, "PORTAL" (2016 / directed by Yukichi Matsumoto / nominated for the 61st Kishida Kunio Drama Award)</li>
+                            <li>Ichigekiya, "supermarket!!!" (2023 / short play contribution / Osaka City Cultural Festival Encouragement Prize)</li>
                         </ul>
                     </div>
                 </div>

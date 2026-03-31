@@ -1,35 +1,35 @@
 <!--
 ==========================================
-Version: 1.8.16
+Version: 1.0.0
 Date: 2026-03-30
-Summary: 英語版トップへのJP/EN切替とhreflangを追加。
+Summary: 英語版トップページを新規作成。
 Author: Codex
 ==========================================
 -->
 <!DOCTYPE html>
-<html lang="ja" class="scroll-smooth">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>極東退屈道場 | Kyokuto Taikutsu Dojo</title>
-    <meta name="description" content="極東退屈道場の公式サイト。都市観測から生まれる劇作、主宰プロフィール、上演アーカイブ、関連リンクを掲載。">
-    <meta property="og:title" content="極東退屈道場 | Kyokuto Taikutsu Dojo">
-    <meta property="og:description" content="都市観測と劇作が交差する、極東退屈道場の公式サイト。">
+    <title>Kyokuto Taikutsu Dojo | Urban Research Theater</title>
+    <meta name="description" content="Official website of Kyokuto Taikutsu Dojo. Theater works emerging from urban observation, director profile, and production archive.">
+    <meta property="og:title" content="Kyokuto Taikutsu Dojo | Urban Research Theater">
+    <meta property="og:description" content="An urban research theater project led by Shinichiro Hayashi.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://taikutsu.info/">
-    <meta property="og:image" content="picture/common/ogp_default.svg">
+    <meta property="og:url" content="https://taikutsu.info/en/index.html">
+    <meta property="og:image" content="https://taikutsu.info/picture/common/ogp_default.svg">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="極東退屈道場 | Kyokuto Taikutsu Dojo">
-    <meta name="twitter:description" content="都市観測と劇作が交差する、極東退屈道場の公式サイト。">
+    <meta name="twitter:title" content="Kyokuto Taikutsu Dojo | Urban Research Theater">
+    <meta name="twitter:description" content="Official website of Kyokuto Taikutsu Dojo.">
     <meta name="twitter:image" content="https://taikutsu.info/picture/common/ogp_default.svg">
-    <link rel="canonical" href="https://taikutsu.info/">
+    <link rel="canonical" href="https://taikutsu.info/en/index.html">
     <link rel="alternate" hreflang="ja" href="https://taikutsu.info/">
     <link rel="alternate" hreflang="en" href="https://taikutsu.info/en/index.html">
     <link rel="alternate" hreflang="x-default" href="https://taikutsu.info/">
-    <link rel="icon" type="image/svg+xml" href="picture/common/favicon.svg">
+    <link rel="icon" type="image/svg+xml" href="../picture/common/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;300;400;500&family=Noto+Sans+JP:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;300;400;500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -37,7 +37,7 @@ Author: Codex
             theme: {
                 extend: {
                     colors: { 'dojo-bg': '#ffffff', 'dojo-text': '#1a1a1a', 'dojo-sub': '#888888', 'dojo-border': '#e2e2e2', 'dojo-grid': '#f8f8f8' },
-                    fontFamily: { sans: ['Noto Sans JP', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] }
+                    fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] }
                 }
             }
         }
@@ -74,7 +74,6 @@ Author: Codex
         }
         .scan-cross-v {
             position: absolute;
-            /* 親（ヒーロー）の高さ基準で伸ばす。vh指定だと端末ごとに微妙に位置が変わる。 */
             top: -8%;
             bottom: -8%;
             width: 2px;
@@ -103,7 +102,7 @@ Author: Codex
             z-index: 0;
             pointer-events: none;
             overflow: hidden;
-            background-image: url("picture/common/hero_map_watermark.svg");
+            background-image: url("../picture/common/hero_map_watermark.svg");
             background-repeat: no-repeat;
             background-size: min(128%, 1520px) auto;
             background-position: 52% 47%;
@@ -136,17 +135,17 @@ Author: Codex
     <header class="fixed top-0 inset-x-0 h-[100px] z-[3000] bg-white/95 backdrop-blur-md border-b border-dojo-border">
         <div class="h-full max-w-[980px] mx-auto px-6 lg:px-6 flex items-center justify-between">
             <a href="index.html" class="logo-group flex flex-col no-underline text-inherit rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black/35">
-                <h1 class="font-light text-xl lg:text-2xl tracking-widest leading-none">極東退屈道場</h1>
+                <h1 class="font-light text-xl lg:text-2xl tracking-widest leading-none">Kyokuto Taikutsu Dojo</h1>
                 <span class="font-mono text-[10px] tracking-[0.2em] text-dojo-sub mt-2 uppercase">Urban Research Theater</span>
             </a>
             <nav class="hidden md:block">
                 <ul class="flex gap-8 lg:gap-12 items-center">
                     <li><a href="profile.html" class="font-mono text-xs tracking-widest opacity-60 hover:opacity-100 transition-opacity uppercase">Director</a></li>
                     <li><a href="archive.html" class="font-mono text-xs tracking-widest opacity-60 hover:opacity-100 transition-opacity uppercase">Archive</a></li>
-                    <li><a href="collaboration.html" class="font-mono text-xs tracking-widest opacity-60 hover:opacity-100 transition-opacity uppercase">Collaboration</a></li>
-                    <li><a href="links.html" class="font-mono text-xs tracking-widest opacity-60 hover:opacity-100 transition-opacity uppercase">Press</a></li>
-                    <li class="flex items-center gap-2 font-mono text-[10px] tracking-[0.18em] uppercase"><span class="border-b border-black pb-1">JP</span><span class="text-dojo-sub/50">/</span><a href="en/index.html" class="opacity-60 hover:opacity-100 transition-opacity">EN</a></li>
-                    <li><a href="contact.html" class="flex items-center gap-3 px-5 py-2 border border-black text-xs font-mono font-bold tracking-widest hover:bg-black hover:text-white transition-all uppercase">Contact <i data-lucide="arrow-right" class="w-3 h-3"></i></a></li>
+                    <li><a href="../collaboration.html" class="font-mono text-xs tracking-widest opacity-60 hover:opacity-100 transition-opacity uppercase">Collaboration</a></li>
+                    <li><a href="../links.html" class="font-mono text-xs tracking-widest opacity-60 hover:opacity-100 transition-opacity uppercase">Press</a></li>
+                    <li class="flex items-center gap-2 font-mono text-[10px] tracking-[0.18em] uppercase"><a href="../index.html" class="opacity-60 hover:opacity-100 transition-opacity">JP</a><span class="text-dojo-sub/50">/</span><span class="border-b border-black pb-1">EN</span></li>
+                    <li><a href="../contact.html" class="flex items-center gap-3 px-5 py-2 border border-black text-xs font-mono font-bold tracking-widest hover:bg-black hover:text-white transition-all uppercase">Contact <i data-lucide="arrow-right" class="w-3 h-3"></i></a></li>
                 </ul>
             </nav>
         </div>
@@ -156,10 +155,10 @@ Author: Codex
             <ul class="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 font-mono text-[10px] sm:text-xs tracking-[0.1em] uppercase">
                 <li><a href="profile.html" class="opacity-70">Director</a></li>
                 <li><a href="archive.html" class="opacity-70">Archive</a></li>
-                <li><a href="collaboration.html" class="opacity-70">Collaboration</a></li>
-                <li><a href="links.html" class="opacity-70">Press</a></li>
-                <li><span class="border-b border-black pb-0.5">JP</span>/<a href="en/index.html" class="opacity-70">EN</a></li>
-                <li><a href="contact.html" class="font-bold">Contact</a></li>
+                <li><a href="../collaboration.html" class="opacity-70">Collaboration</a></li>
+                <li><a href="../links.html" class="opacity-70">Press</a></li>
+                <li><a href="../index.html" class="opacity-70">JP</a>/<span class="border-b border-black pb-0.5">EN</span></li>
+                <li><a href="../contact.html" class="font-bold">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -180,18 +179,18 @@ Author: Codex
                     <div class="inline-flex items-center gap-3 px-4 py-2 mb-8 bg-white/70 border border-dojo-border font-mono text-[10px] tracking-[0.22em] uppercase">
                         Urban Research Theater <span class="text-black/40">Since 2007</span>
                     </div>
-                    <h2 class="text-3xl md:text-5xl lg:text-6xl font-semibold leading-tight tracking-tight mb-6 md:mb-10">歩き、聞き、採集する。<br>その足跡を物語へと編み直す。</h2>
+                    <h2 class="text-3xl md:text-5xl lg:text-6xl font-semibold leading-tight tracking-tight mb-6 md:mb-10">Walking, listening, collecting.<br>Turning traces of the city into narrative.</h2>
                     <blockquote class="mb-8 md:mb-12 max-w-2xl border-l-2 border-black/15 pl-5 md:pl-6" cite="https://portal-2016.wixsite.com/portal/introduction">
                         <p class="text-lg md:text-2xl font-light leading-relaxed tracking-wide text-dojo-text/90">
-                            <span class="block">踊ろう　朝まで</span>
-                            <span class="block">その地図で</span>
+                            <span class="block">Let us dance till morning</span>
+                            <span class="block">with that map</span>
                         </p>
-                        <footer class="mt-4 font-mono text-[10px] tracking-[0.14em] text-dojo-sub">戯曲『PORTAL』より · <a href="collaboration.html" class="border-b border-dojo-border hover:border-dojo-text transition-colors text-dojo-text">Collaboration</a></footer>
+                        <footer class="mt-4 font-mono text-[10px] tracking-[0.14em] text-dojo-sub">from the play "PORTAL" · <a href="../collaboration.html" class="border-b border-dojo-border hover:border-dojo-text transition-colors text-dojo-text">Collaboration</a></footer>
                     </blockquote>
-                    <p class="text-sm md:text-base font-light leading-loose text-dojo-text max-w-2xl text-justify opacity-80">ここは、都市の観測と劇作が交差する場所。フィールドワークによって現実から削り出された記録を解体し、舞台の上に「緻密な虚構」として再構築する。</p>
+                    <p class="text-sm md:text-base font-light leading-loose text-dojo-text max-w-2xl text-justify opacity-80">This is a place where urban observation intersects with playwriting. Records carved out of fieldwork are dismantled, reframed, and reconstructed on stage as precise fiction.</p>
                     <div class="mt-6 flex flex-wrap items-center gap-4">
-                        <a href="contact.html#requests" class="inline-flex items-center gap-3 px-5 py-2 border border-black text-xs font-mono font-bold tracking-widest hover:bg-black hover:text-white transition-all uppercase">
-                            依頼・上演・台本使用許諾 <i data-lucide="arrow-right" class="w-3 h-3"></i>
+                        <a href="../contact.html#requests" class="inline-flex items-center gap-3 px-5 py-2 border border-black text-xs font-mono font-bold tracking-widest hover:bg-black hover:text-white transition-all uppercase">
+                            Contact / Performances / Script Licensing <i data-lucide="arrow-right" class="w-3 h-3"></i>
                         </a>
                     </div>
                 </div>
@@ -201,32 +200,32 @@ Author: Codex
         <section id="archive" class="relative z-[1] px-6 lg:px-6 py-20 max-w-[980px] mx-auto">
             <div class="flex items-center gap-8 mb-16"><span class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase whitespace-nowrap">Selected Archive</span><div class="h-[1px] flex-grow bg-dojo-border"></div></div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                <a href="archive.html#work-013" class="archive-card-link group block w-full max-w-[300px] mx-auto rounded-sm text-inherit no-underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black/40" aria-label="コンテナ — アーカイブの詳細へ">
+                <a href="archive.html#work-013" class="archive-card-link group block w-full max-w-[300px] mx-auto rounded-sm text-inherit no-underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black/40" aria-label="Container - go to archive details">
                     <article>
                         <div class="relative aspect-video mb-8 overflow-hidden border border-dojo-border bg-gray-50">
                             <div class="absolute top-0 left-0 px-3 py-1 bg-white/90 border-b border-r border-dojo-border font-mono text-[10px] tracking-widest z-10">FEATURED</div>
-                            <img src="picture/works/work_013_container.jpg" alt="コンテナ（2023）" class="archive-card-img w-full h-full object-cover opacity-90 group-hover:scale-[1.04] group-focus-visible:scale-[1.04] transition-transform duration-700 ease-out">
+                            <img src="../picture/works/work_013_container.jpg" alt="Container (2023)" class="archive-card-img w-full h-full object-cover opacity-90 group-hover:scale-[1.04] group-focus-visible:scale-[1.04] transition-transform duration-700 ease-out">
                         </div>
-                        <h3 class="text-xl font-medium tracking-wide group-hover:opacity-80 group-focus-visible:opacity-80 transition-opacity">コンテナ</h3>
-                        <p class="text-xs text-dojo-sub mt-4">2023 | 山本能楽堂</p>
+                        <h3 class="text-xl font-medium tracking-wide group-hover:opacity-80 group-focus-visible:opacity-80 transition-opacity">Container</h3>
+                        <p class="text-xs text-dojo-sub mt-4">2023 | Yamamoto Noh Theater</p>
                     </article>
                 </a>
-                <a href="archive.html#work-010" class="archive-card-link group block w-full max-w-[300px] mx-auto rounded-sm text-inherit no-underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black/40" aria-label="ジャンクション — アーカイブの詳細へ">
+                <a href="archive.html#work-010" class="archive-card-link group block w-full max-w-[300px] mx-auto rounded-sm text-inherit no-underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black/40" aria-label="Junction - go to archive details">
                     <article>
                         <div class="relative aspect-video mb-8 overflow-hidden border border-dojo-border bg-gray-50">
-                            <img src="picture/works/work_010_junction.jpg" alt="ジャンクション（2019）" class="archive-card-img w-full h-full object-cover opacity-90 group-hover:scale-[1.04] group-focus-visible:scale-[1.04] transition-transform duration-700 ease-out">
+                            <img src="../picture/works/work_010_junction.jpg" alt="Junction (2019)" class="archive-card-img w-full h-full object-cover opacity-90 group-hover:scale-[1.04] group-focus-visible:scale-[1.04] transition-transform duration-700 ease-out">
                         </div>
-                        <h3 class="text-xl font-medium tracking-wide group-hover:opacity-80 group-focus-visible:opacity-80 transition-opacity">ジャンクション</h3>
-                        <p class="text-xs text-dojo-sub mt-4">2019 | 阪神高速高架下</p>
+                        <h3 class="text-xl font-medium tracking-wide group-hover:opacity-80 group-focus-visible:opacity-80 transition-opacity">Junction</h3>
+                        <p class="text-xs text-dojo-sub mt-4">2019 | Under the Hanshin Expressway</p>
                     </article>
                 </a>
-                <a href="archive.html#work-004" class="archive-card-link group block w-full max-w-[300px] mx-auto rounded-sm text-inherit no-underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black/40" aria-label="サブウェイ — アーカイブの詳細へ">
+                <a href="archive.html#work-004" class="archive-card-link group block w-full max-w-[300px] mx-auto rounded-sm text-inherit no-underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black/40" aria-label="Subway - go to archive details">
                     <article>
                         <div class="relative aspect-video mb-8 overflow-hidden border border-dojo-border bg-gray-50">
-                            <img src="picture/works/work_004_subway.jpg" alt="サブウェイ（2011）" class="archive-card-img w-full h-full object-cover opacity-90 group-hover:scale-[1.04] group-focus-visible:scale-[1.04] transition-transform duration-700 ease-out">
+                            <img src="../picture/works/work_004_subway.jpg" alt="Subway (2011)" class="archive-card-img w-full h-full object-cover opacity-90 group-hover:scale-[1.04] group-focus-visible:scale-[1.04] transition-transform duration-700 ease-out">
                         </div>
-                        <h3 class="text-xl font-medium tracking-wide group-hover:opacity-80 group-focus-visible:opacity-80 transition-opacity">サブウェイ</h3>
-                        <p class="text-xs text-dojo-sub mt-4">2011 | 第18回OMS戯曲賞 大賞</p>
+                        <h3 class="text-xl font-medium tracking-wide group-hover:opacity-80 group-focus-visible:opacity-80 transition-opacity">Subway</h3>
+                        <p class="text-xs text-dojo-sub mt-4">2011 | 18th OMS Playwriting Prize</p>
                     </article>
                 </a>
             </div>

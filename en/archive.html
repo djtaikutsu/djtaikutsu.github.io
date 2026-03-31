@@ -1,0 +1,173 @@
+<!--
+==========================================
+Version: 1.0.0
+Date: 2026-03-30
+Summary: 英語版アーカイブページを新規作成。
+Author: Codex
+==========================================
+-->
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archive | Kyokuto Taikutsu Dojo</title>
+    <meta name="description" content="Production archive of Kyokuto Taikutsu Dojo, with notes on each work, script links, and production websites where available.">
+    <meta property="og:title" content="Archive | Kyokuto Taikutsu Dojo">
+    <meta property="og:description" content="Production archive of Kyokuto Taikutsu Dojo.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://taikutsu.info/en/archive.html">
+    <meta property="og:image" content="https://taikutsu.info/picture/common/ogp_default.svg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Archive | Kyokuto Taikutsu Dojo">
+    <meta name="twitter:description" content="Production archive of Kyokuto Taikutsu Dojo.">
+    <meta name="twitter:image" content="https://taikutsu.info/picture/common/ogp_default.svg">
+    <link rel="canonical" href="https://taikutsu.info/en/archive.html">
+    <link rel="alternate" hreflang="ja" href="https://taikutsu.info/archive.html">
+    <link rel="alternate" hreflang="en" href="https://taikutsu.info/en/archive.html">
+    <link rel="icon" type="image/svg+xml" href="../picture/common/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;300;400;500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { 'dojo-bg': '#ffffff', 'dojo-text': '#1a1a1a', 'dojo-sub': '#888888', 'dojo-border': '#e2e2e2', 'dojo-grid': '#f8f8f8' },
+                    fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: theme('colors.dojo-bg'); color: theme('colors.dojo-text'); -webkit-font-smoothing: antialiased; }
+        .bg-blueprint { background-image: linear-gradient(theme('colors.dojo-grid') 1px, transparent 1px), linear-gradient(90deg, theme('colors.dojo-grid') 1px, transparent 1px); background-size: 80px 80px; }
+        .work-badge { letter-spacing: 0.22em; }
+        .page-map-layer {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            overflow: hidden;
+            background-image: url("../picture/common/hero_map_watermark.svg");
+            background-repeat: no-repeat;
+            background-size: min(138%, 1680px) auto;
+            background-position: 50% 46%;
+            opacity: 0.12;
+        }
+        .archive-toc-nav {
+            display: flex;
+            flex-direction: column;
+        }
+        @media (min-width: 768px) {
+            .archive-toc-nav {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                grid-template-rows: repeat(7, auto);
+                grid-auto-flow: column;
+                column-gap: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body class="relative">
+    <div class="fixed inset-0 z-[-1] bg-blueprint opacity-60"></div>
+
+    <header class="fixed top-0 inset-x-0 h-[100px] z-[3000] bg-white/90 backdrop-blur-xl border-b border-dojo-border">
+        <div class="h-full max-w-[980px] mx-auto px-6 lg:px-6 flex items-center justify-between">
+            <div class="logo-group flex flex-col cursor-pointer" onclick="location.href='index.html'">
+                <h1 class="font-light text-xl lg:text-2xl tracking-widest leading-none">Kyokuto Taikutsu Dojo</h1>
+                <span class="font-mono text-[10px] tracking-[0.2em] text-dojo-sub mt-2 uppercase">Urban Research Theater</span>
+            </div>
+            <nav class="hidden md:block">
+                <ul class="flex gap-8 lg:gap-12 items-center">
+                    <li><a href="profile.html" class="font-mono text-xs tracking-widest opacity-60 hover:opacity-100 transition-opacity uppercase">Director</a></li>
+                    <li><a href="archive.html" class="font-mono text-xs tracking-widest opacity-100 uppercase border-b border-black pb-1">Archive</a></li>
+                    <li><a href="../collaboration.html" class="font-mono text-xs tracking-widest opacity-60 hover:opacity-100 transition-opacity uppercase">Collaboration</a></li>
+                    <li><a href="../links.html" class="font-mono text-xs tracking-widest opacity-60 hover:opacity-100 transition-opacity uppercase">Press</a></li>
+                    <li class="flex items-center gap-2 font-mono text-[10px] tracking-[0.18em] uppercase"><a href="../archive.html" class="opacity-60 hover:opacity-100 transition-opacity">JP</a><span class="text-dojo-sub/50">/</span><span class="border-b border-black pb-1">EN</span></li>
+                    <li><a href="../contact.html" class="flex items-center gap-3 px-5 py-2 border border-black text-xs font-mono font-bold tracking-widest hover:bg-black hover:text-white transition-all uppercase">Contact <i data-lucide="arrow-right" class="w-3 h-3"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <nav class="md:hidden fixed top-[100px] inset-x-0 z-[2900] bg-white/95 border-b border-dojo-border px-3 py-3">
+        <div class="max-w-[980px] mx-auto">
+            <ul class="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 font-mono text-[10px] sm:text-xs tracking-[0.1em] uppercase">
+                <li><a href="profile.html" class="opacity-70">Director</a></li>
+                <li><a href="archive.html" class="opacity-100 border-b border-black pb-0.5">Archive</a></li>
+                <li><a href="../collaboration.html" class="opacity-70">Collaboration</a></li>
+                <li><a href="../links.html" class="opacity-70">Press</a></li>
+                <li><a href="../archive.html" class="opacity-70">JP</a>/<span class="border-b border-black pb-0.5">EN</span></li>
+                <li><a href="../contact.html" class="font-bold">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="pt-[150px] md:pt-[100px]">
+        <section class="relative overflow-hidden px-6 lg:px-6 py-20 border-b border-dojo-border bg-white/40">
+            <div class="page-map-layer" aria-hidden="true"></div>
+            <div class="max-w-[980px] mx-auto relative z-[1]">
+                <h2 class="text-2xl md:text-3xl font-medium tracking-tight leading-snug text-dojo-text">Production Archive</h2>
+                <p class="mt-5 text-sm text-dojo-sub max-w-xl leading-relaxed">Entries include short notes on each work, links to scripts on note, and production sites when still available.</p>
+            </div>
+        </section>
+
+        <section class="max-w-[980px] mx-auto px-6 lg:px-6 py-10 border-b border-dojo-border" aria-labelledby="archive-toc-heading">
+            <h3 id="archive-toc-heading" class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-6">Jump To Works</h3>
+            <nav class="archive-toc-nav" aria-label="Internal links to works">
+                <a href="#work-013" class="group flex flex-wrap items-baseline gap-x-3 gap-y-1 border-b border-dojo-border py-3 text-sm transition-colors hover:border-dojo-text/40"><span class="font-mono text-[10px] tabular-nums text-dojo-sub w-11 shrink-0">2023</span><span class="font-mono text-[10px] text-dojo-sub/80 w-9 shrink-0">#013</span><span class="text-dojo-text group-hover:opacity-80">Container</span></a>
+                <a href="#work-012" class="group flex flex-wrap items-baseline gap-x-3 gap-y-1 border-b border-dojo-border py-3 text-sm transition-colors hover:border-dojo-text/40"><span class="font-mono text-[10px] tabular-nums text-dojo-sub w-11 shrink-0">2022</span><span class="font-mono text-[10px] text-dojo-sub/80 w-9 shrink-0">#012</span><span class="text-dojo-text group-hover:opacity-80">Crossroad</span></a>
+                <a href="#work-011" class="group flex flex-wrap items-baseline gap-x-3 gap-y-1 border-b border-dojo-border py-3 text-sm transition-colors hover:border-dojo-text/40"><span class="font-mono text-[10px] tabular-nums text-dojo-sub w-11 shrink-0">2021</span><span class="font-mono text-[10px] text-dojo-sub/80 w-9 shrink-0">#011</span><span class="text-dojo-text group-hover:opacity-80">LG20/21 Chronicle</span></a>
+                <a href="#work-010" class="group flex flex-wrap items-baseline gap-x-3 gap-y-1 border-b border-dojo-border py-3 text-sm transition-colors hover:border-dojo-text/40"><span class="font-mono text-[10px] tabular-nums text-dojo-sub w-11 shrink-0">2019</span><span class="font-mono text-[10px] text-dojo-sub/80 w-9 shrink-0">#010</span><span class="text-dojo-text group-hover:opacity-80">Junction</span></a>
+                <a href="#work-009" class="group flex flex-wrap items-baseline gap-x-3 gap-y-1 border-b border-dojo-border py-3 text-sm transition-colors hover:border-dojo-text/40"><span class="font-mono text-[10px] tabular-nums text-dojo-sub w-11 shrink-0">2018</span><span class="font-mono text-[10px] text-dojo-sub/80 w-9 shrink-0">#009</span><span class="text-dojo-text group-hover:opacity-80">808 Diet</span></a>
+                <a href="#work-008" class="group flex flex-wrap items-baseline gap-x-3 gap-y-1 border-b border-dojo-border py-3 text-sm transition-colors hover:border-dojo-text/40"><span class="font-mono text-[10px] tabular-nums text-dojo-sub w-11 shrink-0">2017</span><span class="font-mono text-[10px] text-dojo-sub/80 w-9 shrink-0">#008</span><span class="text-dojo-text group-hover:opacity-80">Phantom</span></a>
+                <a href="#work-007" class="group flex flex-wrap items-baseline gap-x-3 gap-y-1 border-b border-dojo-border py-3 text-sm transition-colors hover:border-dojo-text/40"><span class="font-mono text-[10px] tabular-nums text-dojo-sub w-11 shrink-0">2016</span><span class="font-mono text-[10px] text-dojo-sub/80 w-9 shrink-0">#007</span><span class="text-dojo-text group-hover:opacity-80">Hyakushiki Succession</span></a>
+                <a href="#work-006" class="group flex flex-wrap items-baseline gap-x-3 gap-y-1 border-b border-dojo-border py-3 text-sm transition-colors hover:border-dojo-text/40"><span class="font-mono text-[10px] tabular-nums text-dojo-sub w-11 shrink-0">2014</span><span class="font-mono text-[10px] text-dojo-sub/80 w-9 shrink-0">#006</span><span class="text-dojo-text group-hover:opacity-80">Garbecolle</span></a>
+                <a href="#work-005" class="group flex flex-wrap items-baseline gap-x-3 gap-y-1 border-b border-dojo-border py-3 text-sm transition-colors hover:border-dojo-text/40"><span class="font-mono text-[10px] tabular-nums text-dojo-sub w-11 shrink-0">2013</span><span class="font-mono text-[10px] text-dojo-sub/80 w-9 shrink-0">#005</span><span class="text-dojo-text group-hover:opacity-80">Times</span></a>
+                <a href="#work-004" class="group flex flex-wrap items-baseline gap-x-3 gap-y-1 border-b border-dojo-border py-3 text-sm transition-colors hover:border-dojo-text/40"><span class="font-mono text-[10px] tabular-nums text-dojo-sub w-11 shrink-0">2010</span><span class="font-mono text-[10px] text-dojo-sub/80 w-9 shrink-0">#004</span><span class="text-dojo-text group-hover:opacity-80">Subway</span></a>
+                <a href="#work-003" class="group flex flex-wrap items-baseline gap-x-3 gap-y-1 border-b border-dojo-border py-3 text-sm transition-colors hover:border-dojo-text/40"><span class="font-mono text-[10px] tabular-nums text-dojo-sub w-11 shrink-0">2009</span><span class="font-mono text-[10px] text-dojo-sub/80 w-9 shrink-0">#003</span><span class="text-dojo-text group-hover:opacity-80">Remember Waikiki Beach</span></a>
+                <a href="#work-002" class="group flex flex-wrap items-baseline gap-x-3 gap-y-1 border-b border-dojo-border py-3 text-sm transition-colors hover:border-dojo-text/40"><span class="font-mono text-[10px] tabular-nums text-dojo-sub w-11 shrink-0">2008</span><span class="font-mono text-[10px] text-dojo-sub/80 w-9 shrink-0">#002</span><span class="text-dojo-text group-hover:opacity-80">Next Batter's Circle</span></a>
+                <a href="#work-001" class="group flex flex-wrap items-baseline gap-x-3 gap-y-1 border-b border-dojo-border py-3 text-sm transition-colors hover:border-dojo-text/40"><span class="font-mono text-[10px] tabular-nums text-dojo-sub w-11 shrink-0">2007</span><span class="font-mono text-[10px] text-dojo-sub/80 w-9 shrink-0">#001</span><span class="text-dojo-text group-hover:opacity-80">Enzui ga Giri desu.</span></a>
+            </nav>
+        </section>
+
+        <section class="max-w-[980px] mx-auto px-6 lg:px-6 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <article id="work-013" class="border border-dojo-border bg-white p-6"><div class="relative mb-4"><img src="../picture/works/work_013_container.jpg" alt="Container" class="w-full aspect-video object-cover border border-dojo-border"><span class="work-badge absolute top-0 left-0 bg-white/95 border-r border-b border-dojo-border font-mono text-[10px] px-3 py-1">#013</span></div><p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">2023</p><h3 class="text-lg">Container</h3><p class="text-sm text-dojo-sub my-4">Starting from the contrasting landscapes of Yumeshima wetlands and a container terminal, this work reconsiders Osaka as a port city through the perspective of standardized boxes. Logistics, Expo development, and urban transformation accumulate into layered narratives.</p><a href="https://note.com/djtaikutsu/n/nb7db537b36bc" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[10px] font-mono tracking-widest uppercase border border-black px-4 py-2 hover:bg-black hover:text-white transition-all">Script on note <i data-lucide="external-link" class="w-3 h-3"></i></a><a href="../legacy/sites/013-container/top/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[10px] font-mono tracking-widest uppercase border border-dojo-border px-4 py-2 hover:bg-black hover:text-white hover:border-black transition-all ml-3">Production Site <i data-lucide="external-link" class="w-3 h-3"></i></a></article>
+                <article id="work-012" class="border border-dojo-border bg-white p-6"><div class="relative mb-4"><img src="../picture/works/work_012_crossroad.jpg" alt="Crossroad" class="w-full aspect-video object-cover border border-dojo-border"><span class="work-badge absolute top-0 left-0 bg-white/95 border-r border-b border-dojo-border font-mono text-[10px] px-3 py-1">#012</span></div><p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">2022</p><h3 class="text-lg">Crossroad</h3><p class="text-sm text-dojo-sub my-4">Using locations marked by the memory of the Osaka air raids as reference points, the work traces war, evacuation, and the inheritance of promises. Present-day cityscapes are set against distant battlefields to question the contours of displacement.</p><a href="https://note.com/djtaikutsu/n/ncda4d8e920a3" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[10px] font-mono tracking-widest uppercase border border-black px-4 py-2 hover:bg-black hover:text-white transition-all">Script on note <i data-lucide="external-link" class="w-3 h-3"></i></a><a href="../legacy/sites/012-crossroad/crossroad/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[10px] font-mono tracking-widest uppercase border border-dojo-border px-4 py-2 hover:bg-black hover:text-white hover:border-black transition-all ml-3">Production Site <i data-lucide="external-link" class="w-3 h-3"></i></a></article>
+                <article id="work-011" class="border border-dojo-border bg-white p-6"><div class="relative mb-4"><img src="../picture/works/work_011_lg2021.jpg" alt="LG20/21 Chronicle" class="w-full aspect-video object-cover border border-dojo-border"><span class="work-badge absolute top-0 left-0 bg-white/95 border-r border-b border-dojo-border font-mono text-[10px] px-3 py-1">#011</span></div><p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">2021</p><h3 class="text-lg">LG20/21 Chronicle</h3><p class="text-sm text-dojo-sub my-4">Set between a tower apartment and a public phone booth, the piece placed audiences on different floors so that each group experienced the work from a separate perspective. Social distance and division were made visible through the performance format itself.</p><a href="https://note.com/djtaikutsu/n/n41286ba41a33" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[10px] font-mono tracking-widest uppercase border border-black px-4 py-2 hover:bg-black hover:text-white transition-all">Script on note <i data-lucide="external-link" class="w-3 h-3"></i></a><a href="https://ladderspapers.wixsite.com/lg21chronicle" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[10px] font-mono tracking-widest uppercase border border-dojo-border px-4 py-2 hover:bg-black hover:text-white hover:border-black transition-all ml-3">Production Site <i data-lucide="external-link" class="w-3 h-3"></i></a></article>
+                <article id="work-010" class="border border-dojo-border bg-white p-6"><div class="relative mb-4"><img src="../picture/works/work_010_junction.jpg" alt="Junction" class="w-full aspect-video object-cover border border-dojo-border"><span class="work-badge absolute top-0 left-0 bg-white/95 border-r border-b border-dojo-border font-mono text-[10px] px-3 py-1">#010</span></div><p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">2019</p><h3 class="text-lg">Junction</h3><p class="text-sm text-dojo-sub my-4">A tour performance in Enokojima where audiences were guided by actors through spaces inside and outside the venue. Following the history of the submerged imaginary city "Sokohaka," the work turned urban memory and future visions into a bodily experience.</p><a href="https://note.com/djtaikutsu/n/na613cb4b5b0a" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[10px] font-mono tracking-widest uppercase border border-black px-4 py-2 hover:bg-black hover:text-white transition-all">Script on note <i data-lucide="external-link" class="w-3 h-3"></i></a><a href="https://taikutsu.wixsite.com/junction" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[10px] font-mono tracking-widest uppercase border border-dojo-border px-4 py-2 hover:bg-black hover:text-white hover:border-black transition-all ml-3">Production Site <i data-lucide="external-link" class="w-3 h-3"></i></a></article>
+                <article id="work-009" class="border border-dojo-border bg-white p-6"><div class="relative mb-4"><img src="../picture/works/work_009_808diet.jpg" alt="808 Diet" class="w-full aspect-video object-cover border border-dojo-border"><span class="work-badge absolute top-0 left-0 bg-white/95 border-r border-b border-dojo-border font-mono text-[10px] px-3 py-1">#009</span></div><p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">2018</p><h3 class="text-lg">808 Diet</h3><p class="text-sm text-dojo-sub my-4">Taking the Higashi-Yokobori River as its subject, this work collected fragments of Osaka's landscape through movement across its bridges. By tracing a waterway that once marked urban borders, it refreshed the bodily sense of living in the city.</p><a href="https://note.com/djtaikutsu/n/n5a523682ba88" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[10px] font-mono tracking-widest uppercase border border-black px-4 py-2 hover:bg-black hover:text-white transition-all">Script on note <i data-lucide="external-link" class="w-3 h-3"></i></a><a href="https://taikutsu.wixsite.com/808diet" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[10px] font-mono tracking-widest uppercase border border-dojo-border px-4 py-2 hover:bg-black hover:text-white hover:border-black transition-all ml-3">Production Site <i data-lucide="external-link" class="w-3 h-3"></i></a></article>
+                <article id="work-008" class="border border-dojo-border bg-white p-6"><div class="relative mb-4"><img src="../picture/works/work_008_phantom.jpg" alt="Phantom" class="w-full aspect-video object-cover border border-dojo-border"><span class="work-badge absolute top-0 left-0 bg-white/95 border-r border-b border-dojo-border font-mono text-[10px] px-3 py-1">#008</span></div><p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">2017</p><h3 class="text-lg">Phantom</h3><p class="text-sm text-dojo-sub my-4">From the premise of figures awakening inside coin lockers, the piece sets off a chain reaction in which urban modules begin to mutate. A closed environment becomes a frame for anonymity and unease in the modern city.</p><a href="https://note.com/djtaikutsu/n/n3ad3e278bb03" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[10px] font-mono tracking-widest uppercase border border-black px-4 py-2 hover:bg-black hover:text-white transition-all">Script on note <i data-lucide="external-link" class="w-3 h-3"></i></a><a href="../legacy/sites/008-phantom/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[10px] font-mono tracking-widest uppercase border border-dojo-border px-4 py-2 hover:bg-black hover:text-white hover:border-black transition-all ml-3">Production Site <i data-lucide="external-link" class="w-3 h-3"></i></a></article>
+                <article id="work-007" class="border border-dojo-border bg-white p-6"><div class="relative mb-4"><img src="../picture/works/work_007_hyakushiki.jpg" alt="Hyakushiki Succession" class="w-full aspect-video object-cover border border-dojo-border"><span class="work-badge absolute top-0 left-0 bg-white/95 border-r border-b border-dojo-border font-mono text-[10px] px-3 py-1">#007</span></div><p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">2016</p><h3 class="text-lg">Hyakushiki Succession</h3><p class="text-sm text-dojo-sub my-4">Referring to Tennoji Park after the disappearance of its once-famous open-air karaoke culture, the work examines the blank spaces that remain in a neatly regulated public environment. Memories of people pushed out by urban maintenance are reconstructed through a report-theater form.</p><a href="https://note.com/djtaikutsu/n/nd2872d5f364d" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[10px] font-mono tracking-widest uppercase border border-black px-4 py-2 hover:bg-black hover:text-white transition-all">Script on note <i data-lucide="external-link" class="w-3 h-3"></i></a><a href="../legacy/sites/007-100shiki/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[10px] font-mono tracking-widest uppercase border border-dojo-border px-4 py-2 hover:bg-black hover:text-white hover:border-black transition-all ml-3">Production Site <i data-lucide="external-link" class="w-3 h-3"></i></a></article>
+                <article id="work-006" class="border border-dojo-border bg-white p-6"><div class="relative mb-4"><img src="../picture/works/work_006_garbecolle.jpg" alt="Garbecolle" class="w-full aspect-video object-cover border border-dojo-border"><span class="work-badge absolute top-0 left-0 bg-white/95 border-r border-b border-dojo-border font-mono text-[10px] px-3 py-1">#006</span></div><p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">2014</p><h3 class="text-lg">Garbecolle</h3><p class="text-sm text-dojo-sub my-4">Set on the reclaimed land of Maishima, where development stalled, the work collages official documents and citizen interviews. Through actors' bodies and movement, it visualizes the gap between urban planning and lived discourse, asking what a city really is.</p><a href="https://note.com/djtaikutsu/n/ndad720adfd27" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[10px] font-mono tracking-widest uppercase border border-black px-4 py-2 hover:bg-black hover:text-white transition-all">Script on note <i data-lucide="external-link" class="w-3 h-3"></i></a></article>
+                <article id="work-005" class="border border-dojo-border bg-white p-6"><div class="relative mb-4"><img src="../picture/works/work_005_times.jpg" alt="Times" class="w-full aspect-video object-cover border border-dojo-border"><span class="work-badge absolute top-0 left-0 bg-white/95 border-r border-b border-dojo-border font-mono text-[10px] px-3 py-1">#005</span></div><p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">2013</p><h3 class="text-lg">Times</h3><p class="text-sm text-dojo-sub my-4">Using coin-operated parking lots as a motif for suspended urban space, the play rapidly connects fragments of narrative. It is an early representative work that captures both the manic speed of the city and the sorrow carried by people within it.</p><a href="https://note.com/djtaikutsu/n/n155142e44c62" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[10px] font-mono tracking-widest uppercase border border-black px-4 py-2 hover:bg-black hover:text-white transition-all">Script on note <i data-lucide="external-link" class="w-3 h-3"></i></a><a href="../legacy/sites/005-times/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[10px] font-mono tracking-widest uppercase border border-dojo-border px-4 py-2 hover:bg-black hover:text-white hover:border-black transition-all ml-3">Production Site <i data-lucide="external-link" class="w-3 h-3"></i></a></article>
+                <article id="work-004" class="border border-dojo-border bg-white p-6"><div class="relative mb-4"><img src="../picture/works/work_004_subway.jpg" alt="Subway" class="w-full aspect-video object-cover border border-dojo-border"><span class="work-badge absolute top-0 left-0 bg-white/95 border-r border-b border-dojo-border font-mono text-[10px] px-3 py-1">#004</span></div><p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">2010</p><h3 class="text-lg">Subway</h3><p class="text-sm text-dojo-sub my-4">Centered on the subway as urban infrastructure, this work explores movement, solitude, and connection in metropolitan life. It became a turning point for the company and later led to revivals and touring developments.</p><a href="https://note.com/djtaikutsu/n/n864fba31569a" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[10px] font-mono tracking-widest uppercase border border-black px-4 py-2 hover:bg-black hover:text-white transition-all">Script on note <i data-lucide="external-link" class="w-3 h-3"></i></a></article>
+                <article id="work-003" class="border border-dojo-border bg-white p-6"><div class="relative mb-4"><img src="../picture/works/work_003_waikiki.jpg" alt="Remember Waikiki Beach" class="w-full aspect-video object-cover border border-dojo-border"><span class="work-badge absolute top-0 left-0 bg-white/95 border-r border-b border-dojo-border font-mono text-[10px] px-3 py-1">#003</span></div><p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">2009</p><h3 class="text-lg">Remember Waikiki Beach</h3><p class="text-sm text-dojo-sub my-4">An early work that follows layers of memory laid over urban scenery and crosses the boundary between reality and fiction. The perspective that would later define Hayashi's city-research pieces is already visible here.</p><a href="https://note.com/djtaikutsu/n/n7c4550386be8" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[10px] font-mono tracking-widest uppercase border border-black px-4 py-2 hover:bg-black hover:text-white transition-all">Script on note <i data-lucide="external-link" class="w-3 h-3"></i></a></article>
+                <article id="work-002" class="border border-dojo-border bg-white p-6"><div class="relative mb-4"><img src="../picture/works/work_002_nextbatters.jpg" alt="Next Batter's Circle" class="w-full aspect-video object-cover border border-dojo-border"><span class="work-badge absolute top-0 left-0 bg-white/95 border-r border-b border-dojo-border font-mono text-[10px] px-3 py-1">#002</span></div><p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">2008</p><h3 class="text-lg">Next Batter's Circle</h3><p class="text-sm text-dojo-sub my-4">The second work layers together voices from people standing at the edges of the city and redraws the contours of relation. It remains an important early piece in which the seeds of later documentary-report theater can already be seen.</p><a href="https://note.com/djtaikutsu/n/nb2edd240e1aa" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[10px] font-mono tracking-widest uppercase border border-black px-4 py-2 hover:bg-black hover:text-white transition-all">Script on note <i data-lucide="external-link" class="w-3 h-3"></i></a></article>
+                <article id="work-001" class="border border-dojo-border bg-white p-6 md:col-span-2"><div class="relative mb-4"><img src="../picture/works/work_001_enzui.jpg" alt="Enzui ga Giri desu." class="w-full aspect-video object-cover border border-dojo-border"><span class="work-badge absolute top-0 left-0 bg-white/95 border-r border-b border-dojo-border font-mono text-[10px] px-3 py-1">#001</span></div><p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">2007</p><h3 class="text-lg">Enzui ga Giri desu.</h3><p class="text-sm text-dojo-sub my-4">The first production of Kyokuto Taikutsu Dojo and the starting point of its ongoing method of turning urban observation into theater. It still occupies an important place for understanding the later body of work.</p><a href="https://note.com/djtaikutsu/n/na6493f96e3ba" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[10px] font-mono tracking-widest uppercase border border-black px-4 py-2 hover:bg-black hover:text-white transition-all">Script on note <i data-lucide="external-link" class="w-3 h-3"></i></a></article>
+            </div>
+            <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
+                <a href="../contact.html#requests" class="inline-flex items-center gap-3 px-5 py-2 border border-black text-xs font-mono font-bold tracking-widest hover:bg-black hover:text-white transition-all uppercase">
+                    Contact / Performances / Script Licensing <i data-lucide="arrow-right" class="w-3 h-3"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+    <footer class="px-6 lg:px-12 py-16 bg-white border-t border-dojo-border">
+        <div class="max-w-[980px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
+            <div class="font-mono text-[10px] tracking-widest opacity-40 uppercase">&copy; 2026 Kyokuto Taikutsu Dojo</div>
+            <div class="flex items-center gap-5">
+                <a href="https://x.com/kyokuto2007" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" title="X (Twitter)" class="text-dojo-sub hover:text-dojo-text transition-colors"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.91-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                <a href="https://www.youtube.com/user/DJtaikutsu/videos" target="_blank" rel="noopener noreferrer" aria-label="YouTube" title="YouTube" class="text-dojo-sub hover:text-dojo-text transition-colors"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+                <a href="https://www.facebook.com/dojotaikutsu" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook" class="text-dojo-sub hover:text-dojo-text transition-colors"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+                <a href="https://note.com/djtaikutsu" target="_blank" rel="noopener noreferrer" aria-label="note" title="note" class="text-dojo-sub hover:text-dojo-text transition-colors"><svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zm-7 3h2v2h2v2h-2v2h-2V10H10V8h2V6zm-2 8h6v2h-6v-2z"/></svg></a>
+            </div>
+        </div>
+    </footer>
+    <script>lucide.createIcons();</script>
+</body>
+</html>
