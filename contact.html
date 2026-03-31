@@ -1,8 +1,8 @@
 <!--
 ==========================================
-Version: 1.0.12
+Version: 1.0.13
 Date: 2026-03-30
-Summary: SEO基本設定を追加（canonical、og:url絶対URL、twitterカード）。
+Summary: 英語版ContactへのJP/EN切替とhreflangを追加。
 Author: Codex
 ==========================================
 -->
@@ -23,6 +23,8 @@ Author: Codex
     <meta name="twitter:description" content="お問い合わせはGoogleフォームより承ります。">
     <meta name="twitter:image" content="https://taikutsu.info/picture/common/ogp_default.svg">
     <link rel="canonical" href="https://taikutsu.info/contact.html">
+    <link rel="alternate" hreflang="ja" href="https://taikutsu.info/contact.html">
+    <link rel="alternate" hreflang="en" href="https://taikutsu.info/en/contact.html">
     <link rel="icon" type="image/svg+xml" href="picture/common/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -71,6 +73,7 @@ Author: Codex
                     <li><a href="archive.html" class="font-mono text-xs tracking-widest opacity-60 hover:opacity-100 transition-opacity uppercase">Archive</a></li>
                     <li><a href="collaboration.html" class="font-mono text-xs tracking-widest opacity-60 hover:opacity-100 transition-opacity uppercase">Collaboration</a></li>
                     <li><a href="links.html" class="font-mono text-xs tracking-widest opacity-60 hover:opacity-100 transition-opacity uppercase">Press</a></li>
+                    <li class="flex items-center gap-2 font-mono text-[10px] tracking-[0.18em] uppercase"><span class="border-b border-black pb-1">JP</span><span class="text-dojo-sub/50">/</span><a href="en/contact.html" class="opacity-60 hover:opacity-100 transition-opacity">EN</a></li>
                     <li><a href="contact.html" class="font-mono text-xs tracking-widest opacity-100 uppercase border-b border-black pb-1">Contact</a></li>
                 </ul>
             </nav>
@@ -83,6 +86,7 @@ Author: Codex
                 <li><a href="archive.html" class="opacity-70">Archive</a></li>
                 <li><a href="collaboration.html" class="opacity-70">Collaboration</a></li>
                 <li><a href="links.html" class="opacity-70">Press</a></li>
+                <li><span class="border-b border-black pb-0.5">JP</span>/<a href="en/contact.html" class="opacity-70">EN</a></li>
                 <li><a href="contact.html" class="opacity-100 border-b border-black pb-0.5">Contact</a></li>
             </ul>
         </div>

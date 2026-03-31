@@ -1,34 +1,34 @@
 <!--
 ==========================================
-Version: 1.0.8
+Version: 1.0.0
 Date: 2026-03-30
-Summary: 英語版共同プロジェクトへのJP/EN切替とhreflangを追加。
+Summary: 英語版共同プロジェクトページを新規作成。
 Author: Codex
 ==========================================
 -->
 <!DOCTYPE html>
-<html lang="ja" class="scroll-smooth">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>共同制作・プロジェクト | 極東退屈道場</title>
-    <meta name="description" content="極東退屈道場名義以外で、他の演出家・組織と連名で取り組んだ継続的なプロジェクトの一覧です。">
-    <meta property="og:title" content="共同制作・プロジェクト | 極東退屈道場">
-    <meta property="og:description" content="能×現代演劇、PORTAL など、協働プロジェクトの紹介と外部リンク。">
+    <title>Collaborative Projects | Kyokuto Taikutsu Dojo</title>
+    <meta name="description" content="Ongoing collaborative projects developed with directors, theaters, and other organizations outside the Kyokuto Taikutsu Dojo solo productions.">
+    <meta property="og:title" content="Collaborative Projects | Kyokuto Taikutsu Dojo">
+    <meta property="og:description" content="Collaborative projects including Noh x Contemporary Theater and PORTAL.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://taikutsu.info/collaboration.html">
-    <meta property="og:image" content="picture/common/ogp_default.svg">
+    <meta property="og:url" content="https://taikutsu.info/en/collaboration.html">
+    <meta property="og:image" content="https://taikutsu.info/picture/common/ogp_default.svg">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="共同制作・プロジェクト | 極東退屈道場">
-    <meta name="twitter:description" content="能×現代演劇、PORTAL など、協働プロジェクトの紹介と外部リンク。">
+    <meta name="twitter:title" content="Collaborative Projects | Kyokuto Taikutsu Dojo">
+    <meta name="twitter:description" content="Collaborative projects including Noh x Contemporary Theater and PORTAL.">
     <meta name="twitter:image" content="https://taikutsu.info/picture/common/ogp_default.svg">
-    <link rel="canonical" href="https://taikutsu.info/collaboration.html">
+    <link rel="canonical" href="https://taikutsu.info/en/collaboration.html">
     <link rel="alternate" hreflang="ja" href="https://taikutsu.info/collaboration.html">
     <link rel="alternate" hreflang="en" href="https://taikutsu.info/en/collaboration.html">
-    <link rel="icon" type="image/svg+xml" href="picture/common/favicon.svg">
+    <link rel="icon" type="image/svg+xml" href="../picture/common/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;300;400;500&family=Noto+Sans+JP:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;300;400;500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>
@@ -36,7 +36,7 @@ Author: Codex
             theme: {
                 extend: {
                     colors: { 'dojo-bg': '#ffffff', 'dojo-text': '#1a1a1a', 'dojo-sub': '#888888', 'dojo-border': '#e2e2e2', 'dojo-grid': '#f8f8f8' },
-                    fontFamily: { sans: ['Noto Sans JP', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] }
+                    fontFamily: { sans: ['Inter', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] }
                 }
             }
         }
@@ -50,7 +50,7 @@ Author: Codex
             z-index: 0;
             pointer-events: none;
             overflow: hidden;
-            background-image: url("picture/common/hero_map_watermark.svg");
+            background-image: url("../picture/common/hero_map_watermark.svg");
             background-repeat: no-repeat;
             background-size: min(138%, 1680px) auto;
             background-position: 50% 46%;
@@ -64,7 +64,7 @@ Author: Codex
     <header class="fixed top-0 inset-x-0 h-[100px] z-[3000] bg-white/90 backdrop-blur-xl border-b border-dojo-border">
         <div class="h-full max-w-[980px] mx-auto px-6 lg:px-6 flex items-center justify-between">
             <div class="logo-group flex flex-col cursor-pointer" onclick="location.href='index.html'">
-                <h1 class="font-light text-xl lg:text-2xl tracking-widest leading-none">極東退屈道場</h1>
+                <h1 class="font-light text-xl lg:text-2xl tracking-widest leading-none">Kyokuto Taikutsu Dojo</h1>
                 <span class="font-mono text-[10px] tracking-[0.2em] text-dojo-sub mt-2 uppercase">Urban Research Theater</span>
             </div>
             <nav class="hidden md:block">
@@ -73,7 +73,7 @@ Author: Codex
                     <li><a href="archive.html" class="font-mono text-xs tracking-widest opacity-60 hover:opacity-100 transition-opacity uppercase">Archive</a></li>
                     <li><a href="collaboration.html" class="font-mono text-xs tracking-widest opacity-100 uppercase border-b border-black pb-1">Collaboration</a></li>
                     <li><a href="links.html" class="font-mono text-xs tracking-widest opacity-60 hover:opacity-100 transition-opacity uppercase">Press</a></li>
-                    <li class="flex items-center gap-2 font-mono text-[10px] tracking-[0.18em] uppercase"><span class="border-b border-black pb-1">JP</span><span class="text-dojo-sub/50">/</span><a href="en/collaboration.html" class="opacity-60 hover:opacity-100 transition-opacity">EN</a></li>
+                    <li class="flex items-center gap-2 font-mono text-[10px] tracking-[0.18em] uppercase"><a href="../collaboration.html" class="opacity-60 hover:opacity-100 transition-opacity">JP</a><span class="text-dojo-sub/50">/</span><span class="border-b border-black pb-1">EN</span></li>
                     <li><a href="contact.html" class="flex items-center gap-3 px-5 py-2 border border-black text-xs font-mono font-bold tracking-widest hover:bg-black hover:text-white transition-all uppercase">Contact <i data-lucide="arrow-right" class="w-3 h-3"></i></a></li>
                 </ul>
             </nav>
@@ -86,7 +86,7 @@ Author: Codex
                 <li><a href="archive.html" class="opacity-70">Archive</a></li>
                 <li><a href="collaboration.html" class="opacity-100 border-b border-black pb-0.5">Collaboration</a></li>
                 <li><a href="links.html" class="opacity-70">Press</a></li>
-                <li><span class="border-b border-black pb-0.5">JP</span>/<a href="en/collaboration.html" class="opacity-70">EN</a></li>
+                <li><a href="../collaboration.html" class="opacity-70">JP</a>/<span class="border-b border-black pb-0.5">EN</span></li>
                 <li><a href="contact.html" class="font-bold">Contact</a></li>
             </ul>
         </div>
@@ -96,38 +96,36 @@ Author: Codex
         <section class="relative overflow-hidden px-6 lg:px-6 py-20 border-b border-dojo-border bg-white/40">
             <div class="page-map-layer" aria-hidden="true"></div>
             <div class="max-w-[980px] mx-auto relative z-[1]">
-                <h2 class="text-2xl md:text-3xl font-medium tracking-tight leading-snug text-dojo-text">共同プロジェクト</h2>
-                <p class="mt-5 text-sm text-dojo-sub max-w-2xl leading-relaxed">極東退屈道場単独の上演ではなく、演出家・能楽堂などと共同で進めた取り組みです。インタビューやメディア掲載は <a href="links.html" class="border-b border-dojo-border hover:border-dojo-text transition-colors">Press</a> をご覧ください。</p>
+                <h2 class="text-2xl md:text-3xl font-medium tracking-tight leading-snug text-dojo-text">Collaborative Projects</h2>
+                <p class="mt-5 text-sm text-dojo-sub max-w-2xl leading-relaxed">These are projects developed in collaboration with directors, Noh theaters, and other partners, rather than productions presented solely under the Kyokuto Taikutsu Dojo name. For interviews and media coverage, please see <a href="links.html" class="border-b border-dojo-border hover:border-dojo-text transition-colors">Press</a>.</p>
             </div>
         </section>
 
         <div class="max-w-[980px] mx-auto px-6 lg:px-6 py-16">
             <section aria-labelledby="sec-projects">
                 <div class="flex items-center gap-8 mb-10">
-                    <h3 id="sec-projects" class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase whitespace-nowrap">一覧</h3>
+                    <h3 id="sec-projects" class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase whitespace-nowrap">Projects</h3>
                     <div class="h-[1px] flex-grow bg-dojo-border"></div>
                 </div>
-                <p class="text-sm text-dojo-sub mb-8 max-w-2xl">極東退屈道場名義ではなく、他の演出家・組織と連名で取り組んだ継続的なプロジェクト。</p>
+                <p class="text-sm text-dojo-sub mb-8 max-w-2xl">Ongoing projects developed in partnership with other directors and organizations.</p>
                 <div class="space-y-4">
-
                     <a href="https://nohxcontemporary.wixsite.com/nohxcontemporary" target="_blank" rel="noopener noreferrer" class="flex items-start justify-between gap-6 border border-dojo-border bg-white p-6 lg:p-8 hover:border-black transition-colors group">
                         <div class="min-w-0">
-                            <p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">山本能楽堂&nbsp;·&nbsp;2016〜</p>
-                            <p class="text-base md:text-lg font-medium tracking-tight mb-2">能 × 現代演劇</p>
-                            <p class="text-sm text-dojo-sub leading-relaxed">山本能楽堂の能楽師と現代演劇が継続的に協働するプロジェクト。林慎一郎が劇作・演出を担当し、複数の演目を発表。</p>
+                            <p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">Yamamoto Noh Theater · 2016-</p>
+                            <p class="text-base md:text-lg font-medium tracking-tight mb-2">Noh x Contemporary Theater</p>
+                            <p class="text-sm text-dojo-sub leading-relaxed">An ongoing collaboration between Noh performers at Yamamoto Noh Theater and contemporary theater artists. Shinichiro Hayashi serves as playwright and director, with multiple productions created through the project.</p>
                         </div>
                         <i data-lucide="external-link" class="w-4 h-4 shrink-0 text-dojo-sub mt-1 group-hover:text-dojo-text transition-colors"></i>
                     </a>
 
                     <a href="https://portal-2016.wixsite.com/portal/introduction" target="_blank" rel="noopener noreferrer" class="flex items-start justify-between gap-6 border border-dojo-border bg-white p-6 lg:p-8 hover:border-black transition-colors group">
                         <div class="min-w-0">
-                            <p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">作：林慎一郎&nbsp;演出：松本雄吉（劇団維新派）&nbsp;·&nbsp;2016</p>
+                            <p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">Text: Shinichiro Hayashi / Direction: Yukichi Matsumoto (Ishinha) · 2016</p>
                             <p class="text-base md:text-lg font-medium tracking-tight mb-2">PORTAL</p>
-                            <p class="text-sm text-dojo-sub leading-relaxed">豊中市・庄内を舞台に地図と神話を重ねた都市劇。第61回岸田國士戯曲賞候補。大阪・沖縄・高知・京都の4都市で上演。</p>
+                            <p class="text-sm text-dojo-sub leading-relaxed">An urban myth play set in Shonai, Toyonaka, layering maps with mythology. Nominated for the 61st Kishida Kunio Drama Award, it was presented in Osaka, Okinawa, Kochi, and Kyoto.</p>
                         </div>
                         <i data-lucide="external-link" class="w-4 h-4 shrink-0 text-dojo-sub mt-1 group-hover:text-dojo-text transition-colors"></i>
                     </a>
-
                 </div>
             </section>
         </div>

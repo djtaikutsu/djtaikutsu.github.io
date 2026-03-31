@@ -1,8 +1,8 @@
 <!--
 ==========================================
-Version: 1.2.11
+Version: 1.2.12
 Date: 2026-03-30
-Summary: SEO基本設定を追加（canonical、og:url絶対URL、twitterカード）。
+Summary: 英語版PressへのJP/EN切替とhreflangを追加。
 Author: Codex
 ==========================================
 -->
@@ -23,6 +23,8 @@ Author: Codex
     <meta name="twitter:description" content="インタビュー・メディア掲載の外部リンク一覧。">
     <meta name="twitter:image" content="https://taikutsu.info/picture/common/ogp_default.svg">
     <link rel="canonical" href="https://taikutsu.info/links.html">
+    <link rel="alternate" hreflang="ja" href="https://taikutsu.info/links.html">
+    <link rel="alternate" hreflang="en" href="https://taikutsu.info/en/links.html">
     <link rel="icon" type="image/svg+xml" href="picture/common/favicon.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -71,6 +73,7 @@ Author: Codex
                     <li><a href="archive.html" class="font-mono text-xs tracking-widest opacity-60 hover:opacity-100 transition-opacity uppercase">Archive</a></li>
                     <li><a href="collaboration.html" class="font-mono text-xs tracking-widest opacity-60 hover:opacity-100 transition-opacity uppercase">Collaboration</a></li>
                     <li><a href="links.html" class="font-mono text-xs tracking-widest opacity-100 uppercase border-b border-black pb-1">Press</a></li>
+                    <li class="flex items-center gap-2 font-mono text-[10px] tracking-[0.18em] uppercase"><span class="border-b border-black pb-1">JP</span><span class="text-dojo-sub/50">/</span><a href="en/links.html" class="opacity-60 hover:opacity-100 transition-opacity">EN</a></li>
                     <li><a href="contact.html" class="flex items-center gap-3 px-5 py-2 border border-black text-xs font-mono font-bold tracking-widest hover:bg-black hover:text-white transition-all uppercase">Contact <i data-lucide="arrow-right" class="w-3 h-3"></i></a></li>
                 </ul>
             </nav>
@@ -83,6 +86,7 @@ Author: Codex
                 <li><a href="archive.html" class="opacity-70">Archive</a></li>
                 <li><a href="collaboration.html" class="opacity-70">Collaboration</a></li>
                 <li><a href="links.html" class="opacity-100 border-b border-black pb-0.5">Press</a></li>
+                <li><span class="border-b border-black pb-0.5">JP</span>/<a href="en/links.html" class="opacity-70">EN</a></li>
                 <li><a href="contact.html" class="font-bold">Contact</a></li>
             </ul>
         </div>

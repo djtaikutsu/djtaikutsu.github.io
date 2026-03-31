@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 ==========================================
-Version: 1.0.1
+Version: 1.0.2
 Date: 2026-03-30
-Summary: 英語版トップ・プロフィール・アーカイブURLを追加。
+Summary: 英語版共同プロジェクト・Press・ContactのURLを追加。
 Author: Codex
 ==========================================
 -->
@@ -42,6 +42,18 @@ Author: Codex
   </url>
   <url>
     <loc>https://taikutsu.info/en/archive.html</loc>
+    <lastmod>2026-03-30</lastmod>
+  </url>
+  <url>
+    <loc>https://taikutsu.info/en/collaboration.html</loc>
+    <lastmod>2026-03-30</lastmod>
+  </url>
+  <url>
+    <loc>https://taikutsu.info/en/links.html</loc>
+    <lastmod>2026-03-30</lastmod>
+  </url>
+  <url>
+    <loc>https://taikutsu.info/en/contact.html</loc>
     <lastmod>2026-03-30</lastmod>
   </url>
 </urlset>
