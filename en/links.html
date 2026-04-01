@@ -1,8 +1,8 @@
 <!--
 ==========================================
-Version: 1.0.0
-Date: 2026-03-30
-Summary: 英語版Pressページを新規作成。
+Version: 1.0.8
+Date: 2026-04-01
+Summary: Replaced featured Press card images with article-specific visuals.
 Author: Codex
 ==========================================
 -->
@@ -11,6 +11,7 @@ Author: Codex
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light">
     <title>Press | Kyokuto Taikutsu Dojo</title>
     <meta name="description" content="Interviews and media coverage related to Kyokuto Taikutsu Dojo.">
     <meta property="og:title" content="Press | Kyokuto Taikutsu Dojo">
@@ -42,6 +43,7 @@ Author: Codex
         }
     </script>
     <style>
+        :root { color-scheme: light; }
         body { background-color: theme('colors.dojo-bg'); color: theme('colors.dojo-text'); -webkit-font-smoothing: antialiased; }
         .bg-blueprint { background-image: linear-gradient(theme('colors.dojo-grid') 1px, transparent 1px), linear-gradient(90deg, theme('colors.dojo-grid') 1px, transparent 1px); background-size: 80px 80px; }
         .page-map-layer {
@@ -57,6 +59,16 @@ Author: Codex
             opacity: 0.12;
         }
     </style>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "Press | Kyokuto Taikutsu Dojo",
+            "url": "https://taikutsu.info/en/links.html",
+            "description": "Interviews and media coverage related to Kyokuto Taikutsu Dojo.",
+            "inLanguage": "en"
+        }
+    </script>
 </head>
 <body class="relative">
     <div class="fixed inset-0 z-[-1] bg-blueprint opacity-60"></div>
@@ -80,8 +92,8 @@ Author: Codex
         </div>
     </header>
     <nav class="md:hidden fixed top-[100px] inset-x-0 z-[2900] bg-white/95 border-b border-dojo-border px-3 py-3">
-        <div class="max-w-[980px] mx-auto">
-            <ul class="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 font-mono text-[10px] sm:text-xs tracking-[0.1em] uppercase">
+        <div class="max-w-[980px] mx-auto overflow-x-auto">
+            <ul class="flex min-w-max items-center gap-4 font-mono text-[10px] sm:text-xs tracking-[0.1em] uppercase whitespace-nowrap px-1">
                 <li><a href="profile.html" class="opacity-70">Director</a></li>
                 <li><a href="archive.html" class="opacity-70">Archive</a></li>
                 <li><a href="collaboration.html" class="opacity-70">Collaboration</a></li>
@@ -103,36 +115,248 @@ Author: Codex
         <div class="max-w-[980px] mx-auto px-6 lg:px-6 py-16 space-y-20">
             <section aria-labelledby="sec-interviews">
                 <div class="flex items-center gap-8 mb-10">
-                    <h3 id="sec-interviews" class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase whitespace-nowrap">Selected Coverage</h3>
+                    <h3 id="sec-interviews" class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase whitespace-nowrap">Coverage Archive</h3>
                     <div class="h-[1px] flex-grow bg-dojo-border"></div>
                 </div>
-                <div class="space-y-4">
-                    <a href="https://spice.eplus.jp/articles/35116" target="_blank" rel="noopener noreferrer" class="flex items-start justify-between gap-6 border border-dojo-border bg-white p-6 lg:p-8 hover:border-black transition-colors group">
-                        <div class="min-w-0">
-                            <p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">SPICE (eplus) · 2016</p>
-                            <p class="text-base md:text-lg font-medium tracking-tight mb-2">Takashi Yamanaka x Shinichiro Hayashi Interview on "PORTAL"</p>
-                            <p class="text-sm text-dojo-sub leading-relaxed">An interview on the urban myth play "PORTAL," written by Shinichiro Hayashi and directed by Yukichi Matsumoto, where actor Takashi Yamanaka and Hayashi discuss the city as though layering one map over another.</p>
+                <p class="mb-10 text-sm text-dojo-sub leading-relaxed max-w-3xl">This page gathers interviews, reviews, performance reports, and feature stories related to Kyokuto Taikutsu Dojo. It is intended both as an entry point to the work and as a reference page for presenters, collaborators, and commissioners.</p>
+                <div class="mb-14">
+                    <div class="flex items-end justify-between gap-6 mb-6">
+                        <div>
+                            <p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">Featured</p>
+                            <h4 class="text-lg md:text-xl font-medium tracking-tight text-dojo-text">Featured Coverage</h4>
                         </div>
-                        <i data-lucide="external-link" class="w-4 h-4 shrink-0 text-dojo-sub mt-1 group-hover:text-dojo-text transition-colors"></i>
-                    </a>
+                        <p class="hidden md:block text-sm text-dojo-sub leading-relaxed max-w-md text-right">Three starting points, paired with production images.</p>
+                    </div>
+                    <div class="grid gap-6 md:grid-cols-3">
+                        <a href="https://spice.eplus.jp/articles/261114" target="_blank" rel="noopener noreferrer" class="group border border-dojo-border bg-white overflow-hidden hover:border-black transition-colors">
+                            <img src="https://spice.eplus.jp/images/Vv1gBd6qfZu6kQxEkCfFMiN3QlFh6ctUitvq2hXkeCqwzqcRXp611Psifq2zqxoU" alt="Junction" class="w-full aspect-[4/3] object-cover border-b border-dojo-border">
+                            <div class="p-5">
+                                <p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">SPICE (eplus) · 2019</p>
+                                <p class="text-base font-medium tracking-tight mb-2">Interview on "Junction"</p>
+                                <p class="text-sm text-dojo-sub leading-relaxed">A long-form interview tracing Enokojima and the urban imagination behind "Junction."</p>
+                            </div>
+                        </a>
+                        <a href="https://natalie.mu/stage/news/528076" target="_blank" rel="noopener noreferrer" class="group border border-dojo-border bg-white overflow-hidden hover:border-black transition-colors">
+                            <img src="https://ogre.natalie.mu/media/news/stage/2023/0609/MMO_6987.jpg?impolicy=twitter_card_face_crop" alt="Container" class="w-full aspect-[4/3] object-cover border-b border-dojo-border">
+                            <div class="p-5">
+                                <p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">Stage Natalie · 2023</p>
+                                <p class="text-base font-medium tracking-tight mb-2">Performance report on "Container"</p>
+                                <p class="text-sm text-dojo-sub leading-relaxed">A report that captures the atmosphere of "Container" as one of the company's recent key works.</p>
+                            </div>
+                        </a>
+                        <a href="https://spice.eplus.jp/articles/161161" target="_blank" rel="noopener noreferrer" class="group border border-dojo-border bg-white overflow-hidden hover:border-black transition-colors">
+                            <img src="https://spice.eplus.jp/images/ouoMWcZwuhgV1k1KVOewEmOeLMH1yieWpfse3GvsNz5A8KIW1O247YCRehUKkrUW" alt="Phantom" class="w-full aspect-[4/3] object-cover border-b border-dojo-border">
+                            <div class="p-5">
+                                <p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">SPICE (eplus) · 2017</p>
+                                <p class="text-base font-medium tracking-tight mb-2">Interview on "Phantom"</p>
+                                <p class="text-sm text-dojo-sub leading-relaxed">A strong entry point into the coin-locker motif and Hayashi's sense of the city.</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="grid gap-4 md:grid-cols-3 mb-12">
+                    <div class="border border-dojo-border bg-white px-5 py-4">
+                        <p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">01</p>
+                        <p class="text-sm font-medium tracking-tight text-dojo-text mb-1">Interviews</p>
+                        <p class="text-sm text-dojo-sub leading-relaxed">Texts that trace the artistic method and the city's presence through the maker's own words.</p>
+                    </div>
+                    <div class="border border-dojo-border bg-white px-5 py-4">
+                        <p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">02</p>
+                        <p class="text-sm font-medium tracking-tight text-dojo-text mb-1">Reviews / Reports</p>
+                        <p class="text-sm text-dojo-sub leading-relaxed">Records from performances that convey atmosphere, structure, and staging.</p>
+                    </div>
+                    <div class="border border-dojo-border bg-white px-5 py-4">
+                        <p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">03</p>
+                        <p class="text-sm font-medium tracking-tight text-dojo-text mb-1">Introductions / News</p>
+                        <p class="text-sm text-dojo-sub leading-relaxed">External introductions and coverage that offer an entry point into the work.</p>
+                    </div>
+                </div>
+                <div class="space-y-12">
+                    <div>
+                        <div class="flex items-end justify-between gap-6 mb-5">
+                            <div>
+                                <p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">01</p>
+                                <h4 class="text-lg md:text-xl font-medium tracking-tight text-dojo-text">Interviews</h4>
+                            </div>
+                            <p class="hidden md:block text-sm text-dojo-sub leading-relaxed max-w-md text-right">Texts in which the works open up through the artist's own voice.</p>
+                        </div>
+                        <div class="space-y-4">
+                            <a href="https://spice.eplus.jp/articles/35116" target="_blank" rel="noopener noreferrer" class="flex items-start justify-between gap-6 border border-dojo-border bg-white p-6 lg:p-8 hover:border-black transition-colors group">
+                                <div class="min-w-0">
+                                    <p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">SPICE (eplus) · 2016</p>
+                                    <p class="text-base md:text-lg font-medium tracking-tight mb-2">Takashi Yamanaka x Shinichiro Hayashi Interview on "PORTAL"</p>
+                                    <p class="text-sm text-dojo-sub leading-relaxed">A conversation around "PORTAL" in which actor Takashi Yamanaka and Shinichiro Hayashi speak about urban memory and overlapping landscapes.</p>
+                                </div>
+                                <i data-lucide="external-link" class="w-4 h-4 shrink-0 text-dojo-sub mt-1 group-hover:text-dojo-text transition-colors"></i>
+                            </a>
 
-                    <a href="https://www.aihall.com/kyokuto28_interview/" target="_blank" rel="noopener noreferrer" class="flex items-start justify-between gap-6 border border-dojo-border bg-white p-6 lg:p-8 hover:border-black transition-colors group">
-                        <div class="min-w-0">
-                            <p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">AI HALL · 2016</p>
-                            <p class="text-base md:text-lg font-medium tracking-tight mb-2">Interview with Shinichiro Hayashi on "Hyakushiki Succession"</p>
-                            <p class="text-sm text-dojo-sub leading-relaxed">An extended conversation with the director of AI HALL about a new work that reimagines Tennoji Park's "blue-sky karaoke" culture as a contemporary King Lear, where craft, fieldwork, and reflections on Osaka intersect.</p>
-                        </div>
-                        <i data-lucide="external-link" class="w-4 h-4 shrink-0 text-dojo-sub mt-1 group-hover:text-dojo-text transition-colors"></i>
-                    </a>
+                            <a href="https://www.aihall.com/kyokuto28_interview/" target="_blank" rel="noopener noreferrer" class="flex items-start justify-between gap-6 border border-dojo-border bg-white p-6 lg:p-8 hover:border-black transition-colors group">
+                                <div class="min-w-0">
+                                    <p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">AI HALL · 2016</p>
+                                    <p class="text-base md:text-lg font-medium tracking-tight mb-2">Interview with Shinichiro Hayashi on "Hyakushiki Succession"</p>
+                                    <p class="text-sm text-dojo-sub leading-relaxed">An extended interview in which the texture of making "Hyakushiki Succession" and Hayashi's view of Osaka slowly come into focus.</p>
+                                </div>
+                                <i data-lucide="external-link" class="w-4 h-4 shrink-0 text-dojo-sub mt-1 group-hover:text-dojo-text transition-colors"></i>
+                            </a>
 
-                    <a href="https://www.aihall.com/drama/27_oms.html" target="_blank" rel="noopener noreferrer" class="flex items-start justify-between gap-6 border border-dojo-border bg-white p-6 lg:p-8 hover:border-black transition-colors group">
-                        <div class="min-w-0">
-                            <p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">AI HALL · 2015</p>
-                            <p class="text-base md:text-lg font-medium tracking-tight mb-2">Shinichiro Hayashi x Makoto Sato Interview on the revival of "Times"</p>
-                            <p class="text-sm text-dojo-sub leading-relaxed">Ahead of the revival of the OMS Playwriting Prize Special Award-winning "Times" directed by Makoto Sato, playwright and director discuss the meanings of coin parking lots as sites shaped by time and urban experience.</p>
+                            <a href="https://spice.eplus.jp/articles/261114" target="_blank" rel="noopener noreferrer" class="flex items-start justify-between gap-6 border border-dojo-border bg-white p-6 lg:p-8 hover:border-black transition-colors group">
+                                <div class="min-w-0">
+                                    <p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">SPICE (eplus) · 2019</p>
+                                    <p class="text-base md:text-lg font-medium tracking-tight mb-2">Interview on "Junction"</p>
+                                    <p class="text-sm text-dojo-sub leading-relaxed">An interview on "Junction" that traces Enokojima, Osaka's changing cityscape, and Hayashi's method of writing while walking through the city.</p>
+                                </div>
+                                <i data-lucide="external-link" class="w-4 h-4 shrink-0 text-dojo-sub mt-1 group-hover:text-dojo-text transition-colors"></i>
+                            </a>
+
+                            <a href="https://spice.eplus.jp/articles/161161" target="_blank" rel="noopener noreferrer" class="flex items-start justify-between gap-6 border border-dojo-border bg-white p-6 lg:p-8 hover:border-black transition-colors group">
+                                <div class="min-w-0">
+                                    <p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">SPICE (eplus) · 2017</p>
+                                    <p class="text-base md:text-lg font-medium tracking-tight mb-2">Interview on "Phantom"</p>
+                                    <p class="text-sm text-dojo-sub leading-relaxed">An interview that moves from the coin-locker motif of "Phantom" to Hayashi's own urban sensibility shaped between Hakodate and Kansai.</p>
+                                </div>
+                                <i data-lucide="external-link" class="w-4 h-4 shrink-0 text-dojo-sub mt-1 group-hover:text-dojo-text transition-colors"></i>
+                            </a>
+
+                            <a href="https://www.aihall.com/drama/27_oms.html" target="_blank" rel="noopener noreferrer" class="flex items-start justify-between gap-6 border border-dojo-border bg-white p-6 lg:p-8 hover:border-black transition-colors group">
+                                <div class="min-w-0">
+                                    <p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">AI HALL · 2015</p>
+                                    <p class="text-base md:text-lg font-medium tracking-tight mb-2">Shinichiro Hayashi x Makoto Sato Interview on the revival of "Times"</p>
+                                    <p class="text-sm text-dojo-sub leading-relaxed">A dialogue on the revival of "Times," reflecting on coin-operated parking lots as places where time and urban experience accumulate.</p>
+                                </div>
+                                <i data-lucide="external-link" class="w-4 h-4 shrink-0 text-dojo-sub mt-1 group-hover:text-dojo-text transition-colors"></i>
+                            </a>
                         </div>
-                        <i data-lucide="external-link" class="w-4 h-4 shrink-0 text-dojo-sub mt-1 group-hover:text-dojo-text transition-colors"></i>
-                    </a>
+                    </div>
+
+                    <div>
+                        <div class="flex items-end justify-between gap-6 mb-5">
+                            <div>
+                                <p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">02</p>
+                                <h4 class="text-lg md:text-xl font-medium tracking-tight text-dojo-text">Reviews / Reports</h4>
+                            </div>
+                            <p class="hidden md:block text-sm text-dojo-sub leading-relaxed max-w-md text-right">Coverage that records how the performances actually stood in space.</p>
+                        </div>
+                        <div class="space-y-4">
+                            <a href="https://natalie.mu/stage/news/356636" target="_blank" rel="noopener noreferrer" class="flex items-start justify-between gap-6 border border-dojo-border bg-white p-6 lg:p-8 hover:border-black transition-colors group">
+                                <div class="min-w-0">
+                                    <p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">Stage Natalie · 2019</p>
+                                    <p class="text-base md:text-lg font-medium tracking-tight mb-2">Performance report on "Junction"</p>
+                                    <p class="text-sm text-dojo-sub leading-relaxed">A report that captures "Junction" as a promenade performance, conveying both its structure and the atmosphere of Enokojima.</p>
+                                </div>
+                                <i data-lucide="external-link" class="w-4 h-4 shrink-0 text-dojo-sub mt-1 group-hover:text-dojo-text transition-colors"></i>
+                            </a>
+
+                            <a href="https://natalie.mu/stage/news/258301" target="_blank" rel="noopener noreferrer" class="flex items-start justify-between gap-6 border border-dojo-border bg-white p-6 lg:p-8 hover:border-black transition-colors group">
+                                <div class="min-w-0">
+                                    <p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">Stage Natalie · 2017</p>
+                                    <p class="text-base md:text-lg font-medium tracking-tight mb-2">Performance report on "Phantom"</p>
+                                    <p class="text-sm text-dojo-sub leading-relaxed">A short report that frames "Phantom" as a city hidden inside coin lockers and pairs that image with Hayashi's own words.</p>
+                                </div>
+                                <i data-lucide="external-link" class="w-4 h-4 shrink-0 text-dojo-sub mt-1 group-hover:text-dojo-text transition-colors"></i>
+                            </a>
+
+                            <a href="https://natalie.mu/stage/news/307438" target="_blank" rel="noopener noreferrer" class="flex items-start justify-between gap-6 border border-dojo-border bg-white p-6 lg:p-8 hover:border-black transition-colors group">
+                                <div class="min-w-0">
+                                    <p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">Stage Natalie · 2018</p>
+                                    <p class="text-base md:text-lg font-medium tracking-tight mb-2">Performance report on "808 Diet"</p>
+                                    <p class="text-sm text-dojo-sub leading-relaxed">A brief report on "808 Diet" that conveys the energy of the production and its significance as the company's first work centered on Osaka.</p>
+                                </div>
+                                <i data-lucide="external-link" class="w-4 h-4 shrink-0 text-dojo-sub mt-1 group-hover:text-dojo-text transition-colors"></i>
+                            </a>
+
+                            <a href="https://natalie.mu/stage/news/528076" target="_blank" rel="noopener noreferrer" class="flex items-start justify-between gap-6 border border-dojo-border bg-white p-6 lg:p-8 hover:border-black transition-colors group">
+                                <div class="min-w-0">
+                                    <p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">Stage Natalie · 2023</p>
+                                    <p class="text-base md:text-lg font-medium tracking-tight mb-2">Performance report on "Container"</p>
+                                    <p class="text-sm text-dojo-sub leading-relaxed">A report on the stage production of "Container" at Yamamoto Noh Theater, useful as a recent point of reference.</p>
+                                </div>
+                                <i data-lucide="external-link" class="w-4 h-4 shrink-0 text-dojo-sub mt-1 group-hover:text-dojo-text transition-colors"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex items-end justify-between gap-6 mb-5">
+                            <div>
+                                <p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">03</p>
+                                <h4 class="text-lg md:text-xl font-medium tracking-tight text-dojo-text">Introductions / News</h4>
+                            </div>
+                            <p class="hidden md:block text-sm text-dojo-sub leading-relaxed max-w-md text-right">Tracing the outline of Kyokuto Taikutsu Dojo through the words of outside media and venues.</p>
+                        </div>
+                        <div class="space-y-4">
+                            <a href="https://spice.eplus.jp/articles/156850" target="_blank" rel="noopener noreferrer" class="flex items-start justify-between gap-6 border border-dojo-border bg-white p-6 lg:p-8 hover:border-black transition-colors group">
+                                <div class="min-w-0">
+                                    <p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">SPICE (eplus) · 2017</p>
+                                    <p class="text-base md:text-lg font-medium tracking-tight mb-2">Feature article on "Phantom"</p>
+                                    <p class="text-sm text-dojo-sub leading-relaxed">An introductory article on "Phantom" that places the work within the wider context of Hayashi's awards and urban-theatre practice.</p>
+                                </div>
+                                <i data-lucide="external-link" class="w-4 h-4 shrink-0 text-dojo-sub mt-1 group-hover:text-dojo-text transition-colors"></i>
+                            </a>
+
+                            <a href="https://natalie.mu/stage/news/354817" target="_blank" rel="noopener noreferrer" class="flex items-start justify-between gap-6 border border-dojo-border bg-white p-6 lg:p-8 hover:border-black transition-colors group">
+                                <div class="min-w-0">
+                                    <p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">Stage Natalie · 2019</p>
+                                    <p class="text-base md:text-lg font-medium tracking-tight mb-2">Feature article on "Junction"</p>
+                                    <p class="text-sm text-dojo-sub leading-relaxed">A concise introduction to "Junction" as a promenade-style work staged across Enokojima.</p>
+                                </div>
+                                <i data-lucide="external-link" class="w-4 h-4 shrink-0 text-dojo-sub mt-1 group-hover:text-dojo-text transition-colors"></i>
+                            </a>
+
+                            <a href="https://natalie.mu/stage/news/252956" target="_blank" rel="noopener noreferrer" class="flex items-start justify-between gap-6 border border-dojo-border bg-white p-6 lg:p-8 hover:border-black transition-colors group">
+                                <div class="min-w-0">
+                                    <p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">Stage Natalie · 2017</p>
+                                    <p class="text-base md:text-lg font-medium tracking-tight mb-2">Feature article on "Phantom"</p>
+                                    <p class="text-sm text-dojo-sub leading-relaxed">An introduction to "Phantom" that frames the work through its coin-locker setting and its first Nagoya presentation.</p>
+                                </div>
+                                <i data-lucide="external-link" class="w-4 h-4 shrink-0 text-dojo-sub mt-1 group-hover:text-dojo-text transition-colors"></i>
+                            </a>
+
+                            <a href="https://natalie.mu/stage/news/525983" target="_blank" rel="noopener noreferrer" class="flex items-start justify-between gap-6 border border-dojo-border bg-white p-6 lg:p-8 hover:border-black transition-colors group">
+                                <div class="min-w-0">
+                                    <p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">Stage Natalie · 2023</p>
+                                    <p class="text-base md:text-lg font-medium tracking-tight mb-2">Feature article on "Container"</p>
+                                    <p class="text-sm text-dojo-sub leading-relaxed">A concise introduction to "Container," outlining the work's focus on piled-up shipping containers in Yumeshima.</p>
+                                </div>
+                                <i data-lucide="external-link" class="w-4 h-4 shrink-0 text-dojo-sub mt-1 group-hover:text-dojo-text transition-colors"></i>
+                            </a>
+
+                            <a href="https://natalie.mu/stage/news/503711" target="_blank" rel="noopener noreferrer" class="flex items-start justify-between gap-6 border border-dojo-border bg-white p-6 lg:p-8 hover:border-black transition-colors group">
+                                <div class="min-w-0">
+                                    <p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">Stage Natalie · 2022</p>
+                                    <p class="text-base md:text-lg font-medium tracking-tight mb-2">Feature article on "Crossroad"</p>
+                                    <p class="text-sm text-dojo-sub leading-relaxed">An introduction to "Crossroad" that helps show the direction of the company's recent work through its motif of refugee journeys.</p>
+                                </div>
+                                <i data-lucide="external-link" class="w-4 h-4 shrink-0 text-dojo-sub mt-1 group-hover:text-dojo-text transition-colors"></i>
+                            </a>
+
+                            <a href="https://spice.eplus.jp/articles/296298" target="_blank" rel="noopener noreferrer" class="flex items-start justify-between gap-6 border border-dojo-border bg-white p-6 lg:p-8 hover:border-black transition-colors group">
+                                <div class="min-w-0">
+                                    <p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">SPICE (eplus) · 2021</p>
+                                    <p class="text-base md:text-lg font-medium tracking-tight mb-2">Feature article on "LG20/21 Chronicle"</p>
+                                    <p class="text-sm text-dojo-sub leading-relaxed">A feature that introduces "LG20/21 Chronicle" through its use of phone booths, voices, and a city reshaped by the pandemic.</p>
+                                </div>
+                                <i data-lucide="external-link" class="w-4 h-4 shrink-0 text-dojo-sub mt-1 group-hover:text-dojo-text transition-colors"></i>
+                            </a>
+
+                            <a href="https://natalie.mu/stage/news/450654" target="_blank" rel="noopener noreferrer" class="flex items-start justify-between gap-6 border border-dojo-border bg-white p-6 lg:p-8 hover:border-black transition-colors group">
+                                <div class="min-w-0">
+                                    <p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">Stage Natalie · 2021</p>
+                                    <p class="text-base md:text-lg font-medium tracking-tight mb-2">News on "LG20/21 Chronicle"</p>
+                                    <p class="text-sm text-dojo-sub leading-relaxed">A straightforward news item outlining the production setup and the work's attention to urban living spaces.</p>
+                                </div>
+                                <i data-lucide="external-link" class="w-4 h-4 shrink-0 text-dojo-sub mt-1 group-hover:text-dojo-text transition-colors"></i>
+                            </a>
+
+                            <a href="https://naviloft1994.wixsite.com/navi-loft/visitors-kyokuto" target="_blank" rel="noopener noreferrer" class="flex items-start justify-between gap-6 border border-dojo-border bg-white p-6 lg:p-8 hover:border-black transition-colors group">
+                                <div class="min-w-0">
+                                    <p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">Naviloft · 2017</p>
+                                    <p class="text-base md:text-lg font-medium tracking-tight mb-2">Visitors page for "Phantom"</p>
+                                    <p class="text-sm text-dojo-sub leading-relaxed">A venue feature page for the Nagoya presentation of "Phantom" that also offers an external introduction to the company itself.</p>
+                                </div>
+                                <i data-lucide="external-link" class="w-4 h-4 shrink-0 text-dojo-sub mt-1 group-hover:text-dojo-text transition-colors"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
                 <p class="mt-12 text-sm text-dojo-sub max-w-2xl leading-relaxed">For co-productions and long-term collaborative work, see the <a href="collaboration.html" class="border-b border-dojo-border text-dojo-text hover:border-dojo-text transition-colors">Collaboration</a> page.</p>
             </section>

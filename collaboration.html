@@ -1,8 +1,8 @@
 <!--
 ==========================================
-Version: 1.0.8
-Date: 2026-03-30
-Summary: 英語版共同プロジェクトへのJP/EN切替とhreflangを追加。
+Version: 1.0.10
+Date: 2026-04-01
+Summary: 阪大との3カ年プロジェクトと協働導線を追加。
 Author: Codex
 ==========================================
 -->
@@ -11,13 +11,14 @@ Author: Codex
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light">
     <title>共同制作・プロジェクト | 極東退屈道場</title>
     <meta name="description" content="極東退屈道場名義以外で、他の演出家・組織と連名で取り組んだ継続的なプロジェクトの一覧です。">
     <meta property="og:title" content="共同制作・プロジェクト | 極東退屈道場">
     <meta property="og:description" content="能×現代演劇、PORTAL など、協働プロジェクトの紹介と外部リンク。">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://taikutsu.info/collaboration.html">
-    <meta property="og:image" content="picture/common/ogp_default.svg">
+    <meta property="og:image" content="https://taikutsu.info/picture/common/ogp_default.svg">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="共同制作・プロジェクト | 極東退屈道場">
     <meta name="twitter:description" content="能×現代演劇、PORTAL など、協働プロジェクトの紹介と外部リンク。">
@@ -42,6 +43,7 @@ Author: Codex
         }
     </script>
     <style>
+        :root { color-scheme: light; }
         body { background-color: theme('colors.dojo-bg'); color: theme('colors.dojo-text'); -webkit-font-smoothing: antialiased; }
         .bg-blueprint { background-image: linear-gradient(theme('colors.dojo-grid') 1px, transparent 1px), linear-gradient(90deg, theme('colors.dojo-grid') 1px, transparent 1px); background-size: 80px 80px; }
         .page-map-layer {
@@ -57,6 +59,16 @@ Author: Codex
             opacity: 0.12;
         }
     </style>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "共同制作・プロジェクト | 極東退屈道場",
+            "url": "https://taikutsu.info/collaboration.html",
+            "description": "極東退屈道場名義以外で、他の演出家・組織と連名で取り組んだ継続的なプロジェクトの一覧です。",
+            "inLanguage": "ja"
+        }
+    </script>
 </head>
 <body class="relative">
     <div class="fixed inset-0 z-[-1] bg-blueprint opacity-60"></div>
@@ -80,8 +92,8 @@ Author: Codex
         </div>
     </header>
     <nav class="md:hidden fixed top-[100px] inset-x-0 z-[2900] bg-white/95 border-b border-dojo-border px-3 py-3">
-        <div class="max-w-[980px] mx-auto">
-            <ul class="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 font-mono text-[10px] tracking-[0.1em] uppercase">
+        <div class="max-w-[980px] mx-auto overflow-x-auto">
+            <ul class="flex min-w-max items-center gap-4 font-mono text-[10px] tracking-[0.1em] uppercase whitespace-nowrap px-1">
                 <li><a href="profile.html" class="opacity-70">Director</a></li>
                 <li><a href="archive.html" class="opacity-70">Archive</a></li>
                 <li><a href="collaboration.html" class="opacity-100 border-b border-black pb-0.5">Collaboration</a></li>
@@ -97,7 +109,7 @@ Author: Codex
             <div class="page-map-layer" aria-hidden="true"></div>
             <div class="max-w-[980px] mx-auto relative z-[1]">
                 <h2 class="text-2xl md:text-3xl font-medium tracking-tight leading-snug text-dojo-text">共同プロジェクト</h2>
-                <p class="mt-5 text-sm text-dojo-sub max-w-2xl leading-relaxed">極東退屈道場単独の上演ではなく、演出家・能楽堂などと共同で進めた取り組みです。インタビューやメディア掲載は <a href="links.html" class="border-b border-dojo-border hover:border-dojo-text transition-colors">Press</a> をご覧ください。</p>
+                <p class="mt-5 text-sm text-dojo-sub max-w-2xl leading-relaxed">極東退屈道場単独の上演ではなく、演出家・能楽堂・大学などと共同で進めた取り組みです。インタビューやメディア掲載は <a href="links.html" class="border-b border-dojo-border hover:border-dojo-text transition-colors">Press</a> をご覧ください。</p>
             </div>
         </section>
 
@@ -107,7 +119,7 @@ Author: Codex
                     <h3 id="sec-projects" class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase whitespace-nowrap">一覧</h3>
                     <div class="h-[1px] flex-grow bg-dojo-border"></div>
                 </div>
-                <p class="text-sm text-dojo-sub mb-8 max-w-2xl">極東退屈道場名義ではなく、他の演出家・組織と連名で取り組んだ継続的なプロジェクト。</p>
+                <p class="text-sm text-dojo-sub mb-8 max-w-2xl">極東退屈道場名義ではなく、他の演出家・組織と連名で取り組んだ継続的なプロジェクトです。共同企画や教育機関との連携の相談は <a href="contact.html#requests" class="border-b border-dojo-border text-dojo-text hover:border-dojo-text transition-colors">Contact</a> から受け付けています。</p>
                 <div class="space-y-4">
 
                     <a href="https://nohxcontemporary.wixsite.com/nohxcontemporary" target="_blank" rel="noopener noreferrer" class="flex items-start justify-between gap-6 border border-dojo-border bg-white p-6 lg:p-8 hover:border-black transition-colors group">
@@ -127,6 +139,43 @@ Author: Codex
                         </div>
                         <i data-lucide="external-link" class="w-4 h-4 shrink-0 text-dojo-sub mt-1 group-hover:text-dojo-text transition-colors"></i>
                     </a>
+
+                    <div class="border border-dojo-border bg-white p-6 lg:p-8">
+                        <div class="flex items-center gap-6 mb-5">
+                            <p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase whitespace-nowrap">大阪大学中之島芸術センター&nbsp;·&nbsp;2022-2024</p>
+                            <div class="h-[1px] flex-grow bg-dojo-border"></div>
+                        </div>
+                        <p class="text-base md:text-lg font-medium tracking-tight mb-3">中之島デリバティブ</p>
+                        <p class="text-sm text-dojo-sub leading-relaxed mb-6">大阪大学中之島芸術センターと進めた3カ年のリサーチ・パフォーマンス。受講生や研究者との協働を通じて、中之島の歴史、金融、都市の記憶を調査し、スタジオ上演から街を歩くツアーパフォーマンスへと展開した。</p>
+                        <div class="space-y-4">
+                            <div class="border-t border-dojo-border pt-4">
+                                <p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">2022</p>
+                                <p class="text-sm text-dojo-text mb-2">中之島デリバティブ</p>
+                                <p class="text-sm text-dojo-sub leading-relaxed mb-3">大阪大学のアート人材育成プログラムの成果公演として上演。堂島米会所と先物取引の歴史を起点に、未来の大阪を擬似的に取引するパフォーマンスとして構成。</p>
+                                <div class="flex flex-wrap gap-3">
+                                    <a href="https://maytheater.jp/series/2210/1007_nakanoshima.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[10px] font-mono tracking-widest uppercase border border-black px-4 py-2 hover:bg-black hover:text-white transition-all">Event page <i data-lucide="external-link" class="w-3 h-3"></i></a>
+                                </div>
+                            </div>
+                            <div class="border-t border-dojo-border pt-4">
+                                <p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">2023</p>
+                                <p class="text-sm text-dojo-text mb-2">中之島デリバティブII</p>
+                                <p class="text-sm text-dojo-sub leading-relaxed mb-3">「場所のナラティブ / 都市のアルケオロジー」を副題に、中之島地域を移動しながら行うツアーパフォーマンスへ発展。</p>
+                                <div class="flex flex-wrap gap-3">
+                                    <a href="https://www.art.osaka-u.ac.jp/wordpress/news/2394.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[10px] font-mono tracking-widest uppercase border border-black px-4 py-2 hover:bg-black hover:text-white transition-all">University page <i data-lucide="external-link" class="w-3 h-3"></i></a>
+                                    <a href="https://taikutsu.wixsite.com/nakanoshima-d2" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[10px] font-mono tracking-widest uppercase border border-dojo-border px-4 py-2 hover:bg-black hover:text-white hover:border-black transition-all">Project site <i data-lucide="external-link" class="w-3 h-3"></i></a>
+                                </div>
+                            </div>
+                            <div class="border-t border-dojo-border pt-4">
+                                <p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">2024</p>
+                                <p class="text-sm text-dojo-text mb-2">中之島デリバティブIII</p>
+                                <p class="text-sm text-dojo-sub leading-relaxed mb-3">過去2回の成果を土台に、夜の中之島を歩くツアーパフォーマンスとして結実。都市の未来に向けて観客とともに旗を振る構成へ拡張。</p>
+                                <div class="flex flex-wrap gap-3">
+                                    <a href="https://www.art.osaka-u.ac.jp/wordpress/news/3836.html" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[10px] font-mono tracking-widest uppercase border border-black px-4 py-2 hover:bg-black hover:text-white transition-all">University page <i data-lucide="external-link" class="w-3 h-3"></i></a>
+                                    <a href="https://taikutsu.wixsite.com/nakanoshima-d3" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-[10px] font-mono tracking-widest uppercase border border-dojo-border px-4 py-2 hover:bg-black hover:text-white hover:border-black transition-all">Project site <i data-lucide="external-link" class="w-3 h-3"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
             </section>

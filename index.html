@@ -1,8 +1,8 @@
 <!--
 ==========================================
-Version: 1.8.16
-Date: 2026-03-30
-Summary: 英語版トップへのJP/EN切替とhreflangを追加。
+Version: 1.8.18
+Date: 2026-04-01
+Summary: 視認性・画像参照・SEO・導線を改善。
 Author: Codex
 ==========================================
 -->
@@ -11,13 +11,14 @@ Author: Codex
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light">
     <title>極東退屈道場 | Kyokuto Taikutsu Dojo</title>
     <meta name="description" content="極東退屈道場の公式サイト。都市観測から生まれる劇作、主宰プロフィール、上演アーカイブ、関連リンクを掲載。">
     <meta property="og:title" content="極東退屈道場 | Kyokuto Taikutsu Dojo">
     <meta property="og:description" content="都市観測と劇作が交差する、極東退屈道場の公式サイト。">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://taikutsu.info/">
-    <meta property="og:image" content="picture/common/ogp_default.svg">
+    <meta property="og:image" content="https://taikutsu.info/picture/common/ogp_default.svg">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="極東退屈道場 | Kyokuto Taikutsu Dojo">
     <meta name="twitter:description" content="都市観測と劇作が交差する、極東退屈道場の公式サイト。">
@@ -43,6 +44,7 @@ Author: Codex
         }
     </script>
     <style>
+        :root { color-scheme: light; }
         body { background-color: theme('colors.dojo-bg'); color: theme('colors.dojo-text'); -webkit-font-smoothing: antialiased; }
         .bg-blueprint {
             background-image:
@@ -107,7 +109,7 @@ Author: Codex
             background-repeat: no-repeat;
             background-size: min(128%, 1520px) auto;
             background-position: 52% 47%;
-            opacity: 0.075;
+            opacity: 0.05;
         }
         @media (prefers-reduced-motion: reduce) {
             .scan-cross-v {
@@ -129,6 +131,39 @@ Author: Codex
             .archive-card-link:focus-visible .archive-card-img { transform: none !important; }
         }
     </style>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@graph": [
+                {
+                    "@type": "Organization",
+                    "name": "極東退屈道場",
+                    "alternateName": "Kyokuto Taikutsu Dojo",
+                    "url": "https://taikutsu.info/",
+                    "logo": "https://taikutsu.info/picture/common/ogp_default.svg",
+                    "sameAs": [
+                        "https://x.com/kyokuto2007",
+                        "https://www.youtube.com/user/DJtaikutsu/videos",
+                        "https://www.facebook.com/dojotaikutsu",
+                        "https://note.com/djtaikutsu"
+                    ]
+                },
+                {
+                    "@type": "WebSite",
+                    "name": "極東退屈道場",
+                    "url": "https://taikutsu.info/",
+                    "inLanguage": "ja"
+                },
+                {
+                    "@type": "WebPage",
+                    "name": "極東退屈道場 | Kyokuto Taikutsu Dojo",
+                    "url": "https://taikutsu.info/",
+                    "description": "極東退屈道場の公式サイト。都市観測から生まれる劇作、主宰プロフィール、上演アーカイブ、関連リンクを掲載。",
+                    "inLanguage": "ja"
+                }
+            ]
+        }
+    </script>
 </head>
 <body class="relative">
     <div class="fixed inset-0 z-[-1] bg-blueprint opacity-[0.72]"></div>
@@ -152,8 +187,8 @@ Author: Codex
         </div>
     </header>
     <nav class="md:hidden fixed top-[100px] inset-x-0 z-[2900] bg-white/95 border-b border-dojo-border px-3 py-3">
-        <div class="max-w-[980px] mx-auto">
-            <ul class="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 font-mono text-[10px] sm:text-xs tracking-[0.1em] uppercase">
+        <div class="max-w-[980px] mx-auto overflow-x-auto">
+            <ul class="flex min-w-max items-center gap-4 font-mono text-[10px] sm:text-xs tracking-[0.1em] uppercase whitespace-nowrap px-1">
                 <li><a href="profile.html" class="opacity-70">Director</a></li>
                 <li><a href="archive.html" class="opacity-70">Archive</a></li>
                 <li><a href="collaboration.html" class="opacity-70">Collaboration</a></li>
@@ -167,6 +202,7 @@ Author: Codex
     <main class="relative pt-[150px] md:pt-[100px]">
         <section class="relative z-[1] isolate h-[74vh] flex flex-col justify-center px-6 lg:px-6 overflow-hidden border-b border-dojo-border">
             <div class="hero-map-layer" aria-hidden="true"></div>
+            <div class="absolute inset-0 bg-white/68" aria-hidden="true"></div>
             <div class="pointer-events-none absolute top-6 left-6 lg:top-10 lg:left-10 z-[2] w-14 h-14 lg:w-[4.5rem] lg:h-[4.5rem] border-l border-t border-black/15" aria-hidden="true"></div>
             <div class="pointer-events-none absolute top-6 right-6 lg:top-10 lg:right-10 z-[2] w-14 h-14 lg:w-[4.5rem] lg:h-[4.5rem] border-r border-t border-black/15" aria-hidden="true"></div>
             <div class="pointer-events-none absolute bottom-6 left-6 lg:bottom-10 lg:left-10 z-[2] w-14 h-14 lg:w-[4.5rem] lg:h-[4.5rem] border-l border-b border-black/15" aria-hidden="true"></div>

@@ -1,8 +1,8 @@
 <!--
 ==========================================
-Version: 1.5.15
-Date: 2026-03-30
-Summary: 英語版プロフィールへのJP/EN切替とhreflangを追加。
+Version: 1.5.17
+Date: 2026-04-01
+Summary: 画像参照・SEO・モバイル導線を改善。
 Author: Codex
 ==========================================
 -->
@@ -11,13 +11,14 @@ Author: Codex
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light">
     <title>Director Profile | 極東退屈道場</title>
     <meta name="description" content="極東退屈道場 主宰・林慎一郎のプロフィールとステートメント。都市観測に基づく劇作の思想を掲載。">
     <meta property="og:title" content="Director Profile | 極東退屈道場">
     <meta property="og:description" content="主宰・林慎一郎のプロフィールと創作ステートメント。">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://taikutsu.info/profile.html">
-    <meta property="og:image" content="picture/common/ogp_default.svg">
+    <meta property="og:image" content="https://taikutsu.info/picture/common/ogp_default.svg">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Director Profile | 極東退屈道場">
     <meta name="twitter:description" content="主宰・林慎一郎のプロフィールと創作ステートメント。">
@@ -42,6 +43,7 @@ Author: Codex
         }
     </script>
     <style>
+        :root { color-scheme: light; }
         body { background-color: theme('colors.dojo-bg'); color: theme('colors.dojo-text'); -webkit-font-smoothing: antialiased; }
         .bg-blueprint { background-image: linear-gradient(theme('colors.dojo-grid') 1px, transparent 1px), linear-gradient(90deg, theme('colors.dojo-grid') 1px, transparent 1px); background-size: 80px 80px; }
         .page-map-layer {
@@ -57,6 +59,27 @@ Author: Codex
             opacity: 0.12;
         }
     </style>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@graph": [
+                {
+                    "@type": "ProfilePage",
+                    "name": "Director Profile | 極東退屈道場",
+                    "url": "https://taikutsu.info/profile.html",
+                    "inLanguage": "ja"
+                },
+                {
+                    "@type": "Person",
+                    "name": "林 慎一郎",
+                    "alternateName": "Shinichiro Hayashi",
+                    "jobTitle": ["劇作家", "演出家"],
+                    "affiliation": {"@type": "Organization", "name": "極東退屈道場"},
+                    "url": "https://taikutsu.info/profile.html"
+                }
+            ]
+        }
+    </script>
 </head>
 <body class="relative">
     <div class="fixed inset-0 z-[-1] bg-blueprint opacity-60"></div>
@@ -80,8 +103,8 @@ Author: Codex
         </div>
     </header>
     <nav class="md:hidden fixed top-[100px] inset-x-0 z-[2900] bg-white/95 border-b border-dojo-border px-3 py-3">
-        <div class="max-w-[980px] mx-auto">
-            <ul class="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 font-mono text-[10px] sm:text-xs tracking-[0.1em] uppercase">
+        <div class="max-w-[980px] mx-auto overflow-x-auto">
+            <ul class="flex min-w-max items-center gap-4 font-mono text-[10px] sm:text-xs tracking-[0.1em] uppercase whitespace-nowrap px-1">
                 <li><a href="profile.html" class="opacity-100 border-b border-black pb-0.5">Director</a></li>
                 <li><a href="archive.html" class="opacity-70">Archive</a></li>
                 <li><a href="collaboration.html" class="opacity-70">Collaboration</a></li>

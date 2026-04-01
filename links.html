@@ -1,8 +1,8 @@
 <!--
 ==========================================
-Version: 1.2.12
-Date: 2026-03-30
-Summary: 英語版PressへのJP/EN切替とhreflangを追加。
+Version: 1.2.19
+Date: 2026-04-01
+Summary: Pressページの注目記事カードを外部記事の掲載写真に差し替え。
 Author: Codex
 ==========================================
 -->
@@ -11,13 +11,14 @@ Author: Codex
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light">
     <title>メディア・インタビュー | 極東退屈道場</title>
     <meta name="description" content="極東退屈道場のインタビュー・メディア掲載の一覧ページです。">
     <meta property="og:title" content="メディア・インタビュー | 極東退屈道場">
     <meta property="og:description" content="インタビュー・メディア掲載の外部リンク一覧。">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://taikutsu.info/links.html">
-    <meta property="og:image" content="picture/common/ogp_default.svg">
+    <meta property="og:image" content="https://taikutsu.info/picture/common/ogp_default.svg">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="メディア・インタビュー | 極東退屈道場">
     <meta name="twitter:description" content="インタビュー・メディア掲載の外部リンク一覧。">
@@ -42,6 +43,7 @@ Author: Codex
         }
     </script>
     <style>
+        :root { color-scheme: light; }
         body { background-color: theme('colors.dojo-bg'); color: theme('colors.dojo-text'); -webkit-font-smoothing: antialiased; }
         .bg-blueprint { background-image: linear-gradient(theme('colors.dojo-grid') 1px, transparent 1px), linear-gradient(90deg, theme('colors.dojo-grid') 1px, transparent 1px); background-size: 80px 80px; }
         .page-map-layer {
@@ -57,6 +59,16 @@ Author: Codex
             opacity: 0.12;
         }
     </style>
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "メディア・インタビュー | 極東退屈道場",
+            "url": "https://taikutsu.info/links.html",
+            "description": "極東退屈道場のインタビュー・メディア掲載の一覧ページです。",
+            "inLanguage": "ja"
+        }
+    </script>
 </head>
 <body class="relative">
     <div class="fixed inset-0 z-[-1] bg-blueprint opacity-60"></div>
@@ -80,8 +92,8 @@ Author: Codex
         </div>
     </header>
     <nav class="md:hidden fixed top-[100px] inset-x-0 z-[2900] bg-white/95 border-b border-dojo-border px-3 py-3">
-        <div class="max-w-[980px] mx-auto">
-            <ul class="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 font-mono text-[10px] sm:text-xs tracking-[0.1em] uppercase">
+        <div class="max-w-[980px] mx-auto overflow-x-auto">
+            <ul class="flex min-w-max items-center gap-4 font-mono text-[10px] sm:text-xs tracking-[0.1em] uppercase whitespace-nowrap px-1">
                 <li><a href="profile.html" class="opacity-70">Director</a></li>
                 <li><a href="archive.html" class="opacity-70">Archive</a></li>
                 <li><a href="collaboration.html" class="opacity-70">Collaboration</a></li>
@@ -105,37 +117,252 @@ Author: Codex
             <!-- インタビュー・メディア掲載 -->
             <section aria-labelledby="sec-interviews">
                 <div class="flex items-center gap-8 mb-10">
-                    <h3 id="sec-interviews" class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase whitespace-nowrap">掲載リスト</h3>
+                    <h3 id="sec-interviews" class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase whitespace-nowrap">掲載アーカイブ</h3>
                     <div class="h-[1px] flex-grow bg-dojo-border"></div>
                 </div>
-                <div class="space-y-4">
+                <p class="mb-10 text-sm text-dojo-sub leading-relaxed max-w-3xl">極東退屈道場について書かれたインタビュー、劇評、公演レポート、紹介記事をまとめています。作品の入口として、また上演や協働を検討する際の参照先としてご覧ください。</p>
 
-                    <a href="https://spice.eplus.jp/articles/35116" target="_blank" rel="noopener noreferrer" class="flex items-start justify-between gap-6 border border-dojo-border bg-white p-6 lg:p-8 hover:border-black transition-colors group">
-                        <div class="min-w-0">
-                            <p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">SPICE（eplus）&nbsp;·&nbsp;2016</p>
-                            <p class="text-base md:text-lg font-medium tracking-tight mb-2">『PORTAL』山中崇 × 林慎一郎インタビュー</p>
-                            <p class="text-sm text-dojo-sub leading-relaxed">作・林慎一郎、演出・松本雄吉（劇団維新派）による都市神話劇「PORTAL」。主演の山中崇と脚本の林慎一郎が、地図を重ねるように都市を語り合った対話。</p>
+                <div class="mb-14">
+                    <div class="flex items-end justify-between gap-6 mb-6">
+                        <div>
+                            <p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">Featured</p>
+                            <h4 class="text-lg md:text-xl font-medium tracking-tight text-dojo-text">注目記事</h4>
                         </div>
-                        <i data-lucide="external-link" class="w-4 h-4 shrink-0 text-dojo-sub mt-1 group-hover:text-dojo-text transition-colors"></i>
-                    </a>
+                        <p class="hidden md:block text-sm text-dojo-sub leading-relaxed max-w-md text-right">最初に読んでほしい記事を、作品写真とあわせて置いています。</p>
+                    </div>
+                    <div class="grid gap-6 md:grid-cols-3">
+                        <a href="https://spice.eplus.jp/articles/261114" target="_blank" rel="noopener noreferrer" class="group border border-dojo-border bg-white overflow-hidden hover:border-black transition-colors">
+                            <img src="https://spice.eplus.jp/images/Vv1gBd6qfZu6kQxEkCfFMiN3QlFh6ctUitvq2hXkeCqwzqcRXp611Psifq2zqxoU" alt="ジャンクション" class="w-full aspect-[4/3] object-cover border-b border-dojo-border">
+                            <div class="p-5">
+                                <p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">SPICE（eplus）&nbsp;·&nbsp;2019</p>
+                                <p class="text-base font-medium tracking-tight mb-2">『ジャンクション』林慎一郎インタビュー</p>
+                                <p class="text-sm text-dojo-sub leading-relaxed">江之子島と大阪の都市像をめぐって、『ジャンクション』の背景をたどるロングインタビュー。</p>
+                            </div>
+                        </a>
+                        <a href="https://natalie.mu/stage/news/528076" target="_blank" rel="noopener noreferrer" class="group border border-dojo-border bg-white overflow-hidden hover:border-black transition-colors">
+                            <img src="https://ogre.natalie.mu/media/news/stage/2023/0609/MMO_6987.jpg?impolicy=twitter_card_face_crop" alt="コンテナ" class="w-full aspect-[4/3] object-cover border-b border-dojo-border">
+                            <div class="p-5">
+                                <p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">ステージナタリー&nbsp;·&nbsp;2023</p>
+                                <p class="text-base font-medium tracking-tight mb-2">『コンテナ』公演レポート</p>
+                                <p class="text-sm text-dojo-sub leading-relaxed">能舞台で立ち上がった『コンテナ』の空気と、近年作としての現在地を伝える記事。</p>
+                            </div>
+                        </a>
+                        <a href="https://spice.eplus.jp/articles/161161" target="_blank" rel="noopener noreferrer" class="group border border-dojo-border bg-white overflow-hidden hover:border-black transition-colors">
+                            <img src="https://spice.eplus.jp/images/ouoMWcZwuhgV1k1KVOewEmOeLMH1yieWpfse3GvsNz5A8KIW1O247YCRehUKkrUW" alt="ファントム" class="w-full aspect-[4/3] object-cover border-b border-dojo-border">
+                            <div class="p-5">
+                                <p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">SPICE（eplus）&nbsp;·&nbsp;2017</p>
+                                <p class="text-base font-medium tracking-tight mb-2">『ファントム』林慎一郎インタビュー</p>
+                                <p class="text-sm text-dojo-sub leading-relaxed">コインロッカーから都市を見つめる発想と、林慎一郎の都市感覚をたどる記事。</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
 
-                    <a href="https://www.aihall.com/kyokuto28_interview/" target="_blank" rel="noopener noreferrer" class="flex items-start justify-between gap-6 border border-dojo-border bg-white p-6 lg:p-8 hover:border-black transition-colors group">
-                        <div class="min-w-0">
-                            <p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">アイホール&nbsp;·&nbsp;2016</p>
-                            <p class="text-base md:text-lg font-medium tracking-tight mb-2">林慎一郎インタビュー「百式サクセション」</p>
-                            <p class="text-sm text-dojo-sub leading-relaxed">天王寺公園の「青空カラオケ」を現代のリア王として描いた新作について、アイホール・ディレクターとの長時間対話。創作の手触りと大阪論が交差する。</p>
-                        </div>
-                        <i data-lucide="external-link" class="w-4 h-4 shrink-0 text-dojo-sub mt-1 group-hover:text-dojo-text transition-colors"></i>
-                    </a>
+                <div class="grid gap-4 md:grid-cols-3 mb-12">
+                    <div class="border border-dojo-border bg-white px-5 py-4">
+                        <p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">01</p>
+                        <p class="text-sm font-medium tracking-tight text-dojo-text mb-1">Interviews</p>
+                        <p class="text-sm text-dojo-sub leading-relaxed">創作の考え方や、都市を見るまなざしをたどる記事。</p>
+                    </div>
+                    <div class="border border-dojo-border bg-white px-5 py-4">
+                        <p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">02</p>
+                        <p class="text-sm font-medium tracking-tight text-dojo-text mb-1">Reports</p>
+                        <p class="text-sm text-dojo-sub leading-relaxed">上演時の空気や、作品が立ち上がる現場を伝える記録。</p>
+                    </div>
+                    <div class="border border-dojo-border bg-white px-5 py-4">
+                        <p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">03</p>
+                        <p class="text-sm font-medium tracking-tight text-dojo-text mb-1">Introductions / News</p>
+                        <p class="text-sm text-dojo-sub leading-relaxed">初めて触れる人にも開かれた、外部からの紹介と掲載情報。</p>
+                    </div>
+                </div>
 
-                    <a href="https://www.aihall.com/drama/27_oms.html" target="_blank" rel="noopener noreferrer" class="flex items-start justify-between gap-6 border border-dojo-border bg-white p-6 lg:p-8 hover:border-black transition-colors group">
-                        <div class="min-w-0">
-                            <p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">アイホール&nbsp;·&nbsp;2015</p>
-                            <p class="text-base md:text-lg font-medium tracking-tight mb-2">林慎一郎 × 佐藤信インタビュー「タイムズ」再演</p>
-                            <p class="text-sm text-dojo-sub leading-relaxed">OMS戯曲賞特別賞受賞作「タイムズ」の再演（演出：佐藤信）を前に、作者と演出家が語り合った対話。コインパーキングという「場所」と時間の意味を掘り下げる。</p>
+                <div class="space-y-12">
+                    <div>
+                        <div class="flex items-end justify-between gap-6 mb-5">
+                            <div>
+                                <p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">01</p>
+                                <h4 class="text-lg md:text-xl font-medium tracking-tight text-dojo-text">Interviews</h4>
+                            </div>
+                            <p class="hidden md:block text-sm text-dojo-sub leading-relaxed max-w-md text-right">作品の背景や方法が、作り手の言葉を通して見えてくる記事。</p>
                         </div>
-                        <i data-lucide="external-link" class="w-4 h-4 shrink-0 text-dojo-sub mt-1 group-hover:text-dojo-text transition-colors"></i>
-                    </a>
+                        <div class="space-y-4">
+
+                            <a href="https://spice.eplus.jp/articles/35116" target="_blank" rel="noopener noreferrer" class="flex items-start justify-between gap-6 border border-dojo-border bg-white p-6 lg:p-8 hover:border-black transition-colors group">
+                                <div class="min-w-0">
+                                    <p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">SPICE（eplus）&nbsp;·&nbsp;2016</p>
+                                    <p class="text-base md:text-lg font-medium tracking-tight mb-2">『PORTAL』山中崇 × 林慎一郎インタビュー</p>
+                                    <p class="text-sm text-dojo-sub leading-relaxed">『PORTAL』をめぐって、主演の山中崇と林慎一郎が都市の記憶や風景の重なりについて語った対話。</p>
+                                </div>
+                                <i data-lucide="external-link" class="w-4 h-4 shrink-0 text-dojo-sub mt-1 group-hover:text-dojo-text transition-colors"></i>
+                            </a>
+
+                            <a href="https://www.aihall.com/kyokuto28_interview/" target="_blank" rel="noopener noreferrer" class="flex items-start justify-between gap-6 border border-dojo-border bg-white p-6 lg:p-8 hover:border-black transition-colors group">
+                                <div class="min-w-0">
+                                    <p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">アイホール&nbsp;·&nbsp;2016</p>
+                                    <p class="text-base md:text-lg font-medium tracking-tight mb-2">林慎一郎インタビュー「百式サクセション」</p>
+                                    <p class="text-sm text-dojo-sub leading-relaxed">天王寺公園の青空カラオケを起点にした『百式サクセション』について、創作の手触りと大阪の街の見え方がゆっくりほどかれていくインタビュー。</p>
+                                </div>
+                                <i data-lucide="external-link" class="w-4 h-4 shrink-0 text-dojo-sub mt-1 group-hover:text-dojo-text transition-colors"></i>
+                            </a>
+
+                            <a href="https://spice.eplus.jp/articles/261114" target="_blank" rel="noopener noreferrer" class="flex items-start justify-between gap-6 border border-dojo-border bg-white p-6 lg:p-8 hover:border-black transition-colors group">
+                                <div class="min-w-0">
+                                    <p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">SPICE（eplus）&nbsp;·&nbsp;2019</p>
+                                    <p class="text-base md:text-lg font-medium tracking-tight mb-2">『ジャンクション』林慎一郎インタビュー</p>
+                                    <p class="text-sm text-dojo-sub leading-relaxed">『ジャンクション』を手がかりに、江之子島という土地、大阪の来し方行く末、街を歩きながら書くという方法が語られている。</p>
+                                </div>
+                                <i data-lucide="external-link" class="w-4 h-4 shrink-0 text-dojo-sub mt-1 group-hover:text-dojo-text transition-colors"></i>
+                            </a>
+
+                            <a href="https://spice.eplus.jp/articles/161161" target="_blank" rel="noopener noreferrer" class="flex items-start justify-between gap-6 border border-dojo-border bg-white p-6 lg:p-8 hover:border-black transition-colors group">
+                                <div class="min-w-0">
+                                    <p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">SPICE（eplus）&nbsp;·&nbsp;2017</p>
+                                    <p class="text-base md:text-lg font-medium tracking-tight mb-2">『ファントム』林慎一郎インタビュー</p>
+                                    <p class="text-sm text-dojo-sub leading-relaxed">『ファントム』の着想になったコインロッカーという装置から、函館と関西をまたぐ自身の都市感覚までをたどるインタビュー。</p>
+                                </div>
+                                <i data-lucide="external-link" class="w-4 h-4 shrink-0 text-dojo-sub mt-1 group-hover:text-dojo-text transition-colors"></i>
+                            </a>
+
+                            <a href="https://www.aihall.com/drama/27_oms.html" target="_blank" rel="noopener noreferrer" class="flex items-start justify-between gap-6 border border-dojo-border bg-white p-6 lg:p-8 hover:border-black transition-colors group">
+                                <div class="min-w-0">
+                                    <p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">アイホール&nbsp;·&nbsp;2015</p>
+                                    <p class="text-base md:text-lg font-medium tracking-tight mb-2">林慎一郎 × 佐藤信インタビュー「タイムズ」再演</p>
+                                    <p class="text-sm text-dojo-sub leading-relaxed">『タイムズ』再演に際して、コインパーキングという場所に宿る時間の感覚を、作者と演出家がそれぞれの視点から見つめている。</p>
+                                </div>
+                                <i data-lucide="external-link" class="w-4 h-4 shrink-0 text-dojo-sub mt-1 group-hover:text-dojo-text transition-colors"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex items-end justify-between gap-6 mb-5">
+                            <div>
+                                <p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">02</p>
+                                <h4 class="text-lg md:text-xl font-medium tracking-tight text-dojo-text">Reports</h4>
+                            </div>
+                            <p class="hidden md:block text-sm text-dojo-sub leading-relaxed max-w-md text-right">上演の現場から、作品のかたちや空間の質感を伝える記録。</p>
+                        </div>
+                        <div class="space-y-4">
+                            <a href="https://natalie.mu/stage/news/356636" target="_blank" rel="noopener noreferrer" class="flex items-start justify-between gap-6 border border-dojo-border bg-white p-6 lg:p-8 hover:border-black transition-colors group">
+                                <div class="min-w-0">
+                                    <p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">ステージナタリー&nbsp;·&nbsp;2019</p>
+                                    <p class="text-base md:text-lg font-medium tracking-tight mb-2">『ジャンクション』公演レポート</p>
+                                    <p class="text-sm text-dojo-sub leading-relaxed">江之子島を巡る回遊型上演として立ち上がった『ジャンクション』の様子を、作品の形式と街の気配ごと伝える公演レポート。</p>
+                                </div>
+                                <i data-lucide="external-link" class="w-4 h-4 shrink-0 text-dojo-sub mt-1 group-hover:text-dojo-text transition-colors"></i>
+                            </a>
+
+                            <a href="https://natalie.mu/stage/news/258301" target="_blank" rel="noopener noreferrer" class="flex items-start justify-between gap-6 border border-dojo-border bg-white p-6 lg:p-8 hover:border-black transition-colors group">
+                                <div class="min-w-0">
+                                    <p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">ステージナタリー&nbsp;·&nbsp;2017</p>
+                                    <p class="text-base md:text-lg font-medium tracking-tight mb-2">『ファントム』公演レポート</p>
+                                    <p class="text-sm text-dojo-sub leading-relaxed">コインロッカーの内部にひらかれる不思議な街として『ファントム』を紹介し、作品の輪郭と林慎一郎の言葉をあわせて伝える記事。</p>
+                                </div>
+                                <i data-lucide="external-link" class="w-4 h-4 shrink-0 text-dojo-sub mt-1 group-hover:text-dojo-text transition-colors"></i>
+                            </a>
+
+                            <a href="https://natalie.mu/stage/news/307438" target="_blank" rel="noopener noreferrer" class="flex items-start justify-between gap-6 border border-dojo-border bg-white p-6 lg:p-8 hover:border-black transition-colors group">
+                                <div class="min-w-0">
+                                    <p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">ステージナタリー&nbsp;·&nbsp;2018</p>
+                                    <p class="text-base md:text-lg font-medium tracking-tight mb-2">『808ダイエット』公演レポート</p>
+                                    <p class="text-sm text-dojo-sub leading-relaxed">大阪の橋と川を背景にした『808ダイエット』について、公演の熱量と「初の大阪物」という手応えが短く刻まれている。</p>
+                                </div>
+                                <i data-lucide="external-link" class="w-4 h-4 shrink-0 text-dojo-sub mt-1 group-hover:text-dojo-text transition-colors"></i>
+                            </a>
+
+                            <a href="https://natalie.mu/stage/news/528076" target="_blank" rel="noopener noreferrer" class="flex items-start justify-between gap-6 border border-dojo-border bg-white p-6 lg:p-8 hover:border-black transition-colors group">
+                                <div class="min-w-0">
+                                    <p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">ステージナタリー&nbsp;·&nbsp;2023</p>
+                                    <p class="text-base md:text-lg font-medium tracking-tight mb-2">『コンテナ』公演レポート</p>
+                                    <p class="text-sm text-dojo-sub leading-relaxed">能舞台で立ち上がった『コンテナ』の上演風景を伝える記事。近年の代表作のひとつとして、現在地を確かめる入口になる。</p>
+                                </div>
+                                <i data-lucide="external-link" class="w-4 h-4 shrink-0 text-dojo-sub mt-1 group-hover:text-dojo-text transition-colors"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="flex items-end justify-between gap-6 mb-5">
+                            <div>
+                                <p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">03</p>
+                                <h4 class="text-lg md:text-xl font-medium tracking-tight text-dojo-text">Introductions / News</h4>
+                            </div>
+                            <p class="hidden md:block text-sm text-dojo-sub leading-relaxed max-w-md text-right">外部媒体や会場の言葉から、極東退屈道場の輪郭をたどる。</p>
+                        </div>
+                        <div class="space-y-4">
+                            <a href="https://spice.eplus.jp/articles/156850" target="_blank" rel="noopener noreferrer" class="flex items-start justify-between gap-6 border border-dojo-border bg-white p-6 lg:p-8 hover:border-black transition-colors group">
+                                <div class="min-w-0">
+                                    <p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">SPICE（eplus）&nbsp;·&nbsp;2017</p>
+                                    <p class="text-base md:text-lg font-medium tracking-tight mb-2">『ファントム』紹介記事</p>
+                                    <p class="text-sm text-dojo-sub leading-relaxed">『PORTAL』やOMS戯曲賞での評価を背景に、『ファントム』を都市論的演劇の流れの中で紹介している記事。</p>
+                                </div>
+                                <i data-lucide="external-link" class="w-4 h-4 shrink-0 text-dojo-sub mt-1 group-hover:text-dojo-text transition-colors"></i>
+                            </a>
+
+                            <a href="https://natalie.mu/stage/news/354817" target="_blank" rel="noopener noreferrer" class="flex items-start justify-between gap-6 border border-dojo-border bg-white p-6 lg:p-8 hover:border-black transition-colors group">
+                                <div class="min-w-0">
+                                    <p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">ステージナタリー&nbsp;·&nbsp;2019</p>
+                                    <p class="text-base md:text-lg font-medium tracking-tight mb-2">『ジャンクション』紹介記事</p>
+                                    <p class="text-sm text-dojo-sub leading-relaxed">江之子島を舞台にした回遊型演劇として、『ジャンクション』の構成や出演陣を簡潔に伝える記事。</p>
+                                </div>
+                                <i data-lucide="external-link" class="w-4 h-4 shrink-0 text-dojo-sub mt-1 group-hover:text-dojo-text transition-colors"></i>
+                            </a>
+
+                            <a href="https://natalie.mu/stage/news/252956" target="_blank" rel="noopener noreferrer" class="flex items-start justify-between gap-6 border border-dojo-border bg-white p-6 lg:p-8 hover:border-black transition-colors group">
+                                <div class="min-w-0">
+                                    <p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">ステージナタリー&nbsp;·&nbsp;2017</p>
+                                    <p class="text-base md:text-lg font-medium tracking-tight mb-2">『ファントム』紹介記事</p>
+                                    <p class="text-sm text-dojo-sub leading-relaxed">コインロッカーから都市を見つめる作品として、『ファントム』の設定と初の名古屋公演を知らせる紹介記事。</p>
+                                </div>
+                                <i data-lucide="external-link" class="w-4 h-4 shrink-0 text-dojo-sub mt-1 group-hover:text-dojo-text transition-colors"></i>
+                            </a>
+
+                            <a href="https://natalie.mu/stage/news/525983" target="_blank" rel="noopener noreferrer" class="flex items-start justify-between gap-6 border border-dojo-border bg-white p-6 lg:p-8 hover:border-black transition-colors group">
+                                <div class="min-w-0">
+                                    <p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">ステージナタリー&nbsp;·&nbsp;2023</p>
+                                    <p class="text-base md:text-lg font-medium tracking-tight mb-2">『コンテナ』紹介記事</p>
+                                    <p class="text-sm text-dojo-sub leading-relaxed">夢洲に積み上がるコンテナを主題にした新作として、『コンテナ』の上演情報と作品の焦点を簡潔に伝える記事。</p>
+                                </div>
+                                <i data-lucide="external-link" class="w-4 h-4 shrink-0 text-dojo-sub mt-1 group-hover:text-dojo-text transition-colors"></i>
+                            </a>
+
+                            <a href="https://natalie.mu/stage/news/503711" target="_blank" rel="noopener noreferrer" class="flex items-start justify-between gap-6 border border-dojo-border bg-white p-6 lg:p-8 hover:border-black transition-colors group">
+                                <div class="min-w-0">
+                                    <p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">ステージナタリー&nbsp;·&nbsp;2022</p>
+                                    <p class="text-base md:text-lg font-medium tracking-tight mb-2">『クロスロード』紹介記事</p>
+                                    <p class="text-sm text-dojo-sub leading-relaxed">難民の道行をモチーフにした『クロスロード』の構想を通して、近年の極東退屈道場が向かっている方向を伝える記事。</p>
+                                </div>
+                                <i data-lucide="external-link" class="w-4 h-4 shrink-0 text-dojo-sub mt-1 group-hover:text-dojo-text transition-colors"></i>
+                            </a>
+
+                            <a href="https://spice.eplus.jp/articles/296298" target="_blank" rel="noopener noreferrer" class="flex items-start justify-between gap-6 border border-dojo-border bg-white p-6 lg:p-8 hover:border-black transition-colors group">
+                                <div class="min-w-0">
+                                    <p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">SPICE（eplus）&nbsp;·&nbsp;2021</p>
+                                    <p class="text-base md:text-lg font-medium tracking-tight mb-2">『LG20/21クロニクル』紹介記事</p>
+                                    <p class="text-sm text-dojo-sub leading-relaxed">電話ボックスと声を通して街を描く『LG20/21クロニクル』について、コロナ禍を経た構想の変化も含めて紹介している。</p>
+                                </div>
+                                <i data-lucide="external-link" class="w-4 h-4 shrink-0 text-dojo-sub mt-1 group-hover:text-dojo-text transition-colors"></i>
+                            </a>
+
+                            <a href="https://natalie.mu/stage/news/450654" target="_blank" rel="noopener noreferrer" class="flex items-start justify-between gap-6 border border-dojo-border bg-white p-6 lg:p-8 hover:border-black transition-colors group">
+                                <div class="min-w-0">
+                                    <p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">ステージナタリー&nbsp;·&nbsp;2021</p>
+                                    <p class="text-base md:text-lg font-medium tracking-tight mb-2">『LG20/21クロニクル』ニュース</p>
+                                    <p class="text-sm text-dojo-sub leading-relaxed">都市生活者の居住空間に注目した作品として、『LG20/21クロニクル』の上演概要を伝えるニュース記事。</p>
+                                </div>
+                                <i data-lucide="external-link" class="w-4 h-4 shrink-0 text-dojo-sub mt-1 group-hover:text-dojo-text transition-colors"></i>
+                            </a>
+
+                            <a href="https://naviloft1994.wixsite.com/navi-loft/visitors-kyokuto" target="_blank" rel="noopener noreferrer" class="flex items-start justify-between gap-6 border border-dojo-border bg-white p-6 lg:p-8 hover:border-black transition-colors group">
+                                <div class="min-w-0">
+                                    <p class="font-mono text-[10px] tracking-widest text-dojo-sub uppercase mb-2">ナビロフト&nbsp;·&nbsp;2017</p>
+                                    <p class="text-base md:text-lg font-medium tracking-tight mb-2">Visitors 極東退屈道場『ファントム』特設ページ</p>
+                                    <p class="text-sm text-dojo-sub leading-relaxed">名古屋初登場時の特設ページ。作品紹介だけでなく、極東退屈道場というユニットそのものの輪郭が外部の言葉でまとめられている。</p>
+                                </div>
+                                <i data-lucide="external-link" class="w-4 h-4 shrink-0 text-dojo-sub mt-1 group-hover:text-dojo-text transition-colors"></i>
+                            </a>
+                        </div>
+                    </div>
 
                 </div>
                 <p class="mt-12 text-sm text-dojo-sub max-w-2xl leading-relaxed">共同制作・協働プロジェクトは <a href="collaboration.html" class="border-b border-dojo-border text-dojo-text hover:border-dojo-text transition-colors">Collaboration</a> ページをご覧ください。</p>
